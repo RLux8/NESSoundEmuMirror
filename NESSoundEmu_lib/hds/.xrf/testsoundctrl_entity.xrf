@@ -1,0 +1,48 @@
+DESIGN testsoundctrl
+VIEW interface
+NO_GRAPHIC 0
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 231,0 19 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 256,0 20 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 261,0 21 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 276,0 22 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 286,0 23 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 236,0 24 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 241,0 25 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 246,0 26 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 251,0 27 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 266,0 28 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 271,0 29 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 281,0 30 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 1,0 33 0 
+DESIGN testsoundctrl
+VIEW interface
+GRAPHIC 1,0 34 0 

@@ -1,0 +1,77 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "OHstate[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OHstate[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OHstate[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OHstate[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OHstate[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OHstate[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OHstate[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OHstate[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OHstate[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SSM2603_bclk",
+					"strict" : false
+				},
+				{
+					"name" : "SSM2603_pbdat",
+					"strict" : false
+				},
+				{
+					"name" : "SSM2603_pblrc",
+					"strict" : false
+				},
+				{
+					"name" : "ack_error",
+					"strict" : false
+				},
+				{
+					"name" : "SSM2603_scl",
+					"strict" : false
+				},
+				{
+					"name" : "SSM2603_sda",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "res_n",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

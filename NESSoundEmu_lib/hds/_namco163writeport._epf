@@ -1,0 +1,2 @@
+DEFAULT_FILE atom manco163writeport_behav.vhd
+DEFAULT_ARCHITECTURE atom behav

@@ -1,0 +1,29 @@
+set_location_assignment PIN_N20 -to clk
+set_location_assignment PIN_AB24 -to res_n
+set_location_assignment PIN_E6 -to SSM2603_bclk
+set_location_assignment PIN_D6 -to SSM2603_cclk
+set_location_assignment PIN_H10 -to SSM2603_pbdat
+set_location_assignment PIN_G10 -to SSM2603_pblrc
+set_location_assignment PIN_B7 -to SSM2603_scl
+set_location_assignment PIN_G11 -to SSM2603_sda
+set_location_assignment PIN_F7 -to ack_error
+set_location_assignment PIN_L7 -to cpurunstd
+set_location_assignment PIN_AC9 -to selectedSongsstd[0]
+set_location_assignment PIN_AE10 -to selectedSongsstd[1]
+set_location_assignment PIN_AD13 -to selectedSongsstd[2]
+set_location_assignment PIN_AC8 -to selectedSongsstd[3]
+set_location_assignment PIN_W11 -to selectedSongsstd[4]
+set_location_assignment PIN_AB10 -to selectedSongsstd[5]
+set_location_assignment PIN_V10 -to selectedSongsstd[6]
+set_location_assignment PIN_AC10 -to selectedSongsstd[7]
+
+set_location_assignment PIN_F7 -to statusstd[0]
+set_location_assignment PIN_F6 -to statusstd[1]
+set_location_assignment PIN_G6 -to statusstd[2]
+set_location_assignment PIN_G7 -to statusstd[3]
+set_location_assignment PIN_J8 -to statusstd[4]
+set_location_assignment PIN_J7 -to statusstd[5]
+set_location_assignment PIN_K10 -to statusstd[6]
+set_location_assignment PIN_K8 -to statusstd[7]
+
+

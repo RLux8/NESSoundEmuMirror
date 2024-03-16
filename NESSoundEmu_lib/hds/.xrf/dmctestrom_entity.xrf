@@ -1,0 +1,30 @@
+DESIGN dmctestrom
+VIEW interface
+NO_GRAPHIC 0
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 159,0 13 0 
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 164,0 14 0 
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 179,0 15 0 
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 184,0 16 0 
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 169,0 17 0 
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 174,0 18 0 
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 1,0 21 0 
+DESIGN dmctestrom
+VIEW interface
+GRAPHIC 1,0 22 0 

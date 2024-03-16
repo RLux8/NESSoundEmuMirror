@@ -1,0 +1,1144 @@
+Timing Analyzer report for NESPlayertoplevel
+Fri Mar 15 10:42:37 2024
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1100mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1100mV 85C Model Setup Summary
+  8. Slow 1100mV 85C Model Hold Summary
+  9. Slow 1100mV 85C Model Recovery Summary
+ 10. Slow 1100mV 85C Model Removal Summary
+ 11. Slow 1100mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1100mV 85C Model Metastability Summary
+ 13. Slow 1100mV 0C Model Fmax Summary
+ 14. Slow 1100mV 0C Model Setup Summary
+ 15. Slow 1100mV 0C Model Hold Summary
+ 16. Slow 1100mV 0C Model Recovery Summary
+ 17. Slow 1100mV 0C Model Removal Summary
+ 18. Slow 1100mV 0C Model Minimum Pulse Width Summary
+ 19. Slow 1100mV 0C Model Metastability Summary
+ 20. Fast 1100mV 85C Model Setup Summary
+ 21. Fast 1100mV 85C Model Hold Summary
+ 22. Fast 1100mV 85C Model Recovery Summary
+ 23. Fast 1100mV 85C Model Removal Summary
+ 24. Fast 1100mV 85C Model Minimum Pulse Width Summary
+ 25. Fast 1100mV 85C Model Metastability Summary
+ 26. Fast 1100mV 0C Model Setup Summary
+ 27. Fast 1100mV 0C Model Hold Summary
+ 28. Fast 1100mV 0C Model Recovery Summary
+ 29. Fast 1100mV 0C Model Removal Summary
+ 30. Fast 1100mV 0C Model Minimum Pulse Width Summary
+ 31. Fast 1100mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1100mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1100mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1100mv 0c Model)
+ 38. Signal Integrity Metrics (Fast 1100mv 85c Model)
+ 39. Setup Transfers
+ 40. Hold Transfers
+ 41. Recovery Transfers
+ 42. Removal Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths Summary
+ 46. Clock Status Summary
+ 47. Unconstrained Input Ports
+ 48. Unconstrained Output Ports
+ 49. Unconstrained Input Ports
+ 50. Unconstrained Output Ports
+ 51. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                         ;
++-----------------------+---------------------------------------------------------+
+; Quartus Prime Version ; Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                  ;
+; Revision Name         ; NESPlayertoplevel                                       ;
+; Device Family         ; Cyclone V                                               ;
+; Device Name           ; 5CGXFC5C6F27C7                                          ;
+; Timing Models         ; Final                                                   ;
+; Delay Model           ; Combined                                                ;
+; Rise/Fall Delays      ; Enabled                                                 ;
++-----------------------+---------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 4.11        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  32.1%      ;
+;     Processor 3            ;  31.4%      ;
+;     Processor 4            ;  31.1%      ;
+;     Processor 5            ;  27.1%      ;
+;     Processor 6            ;  27.1%      ;
+;     Processor 7            ;  27.1%      ;
+;     Processor 8            ;  27.1%      ;
+;     Processor 9            ;  27.1%      ;
+;     Processor 10           ;  27.1%      ;
+;     Processor 11           ;  27.1%      ;
+;     Processor 12           ;  27.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+; Clock Name                                                                                ; Type      ; Period ; Frequency  ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master                                                                                  ; Source                                                                                       ; Targets                                                                                       ;
++-------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+; clk                                                                                       ; Base      ; 20.000 ; 50.0 MHz   ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                         ;                                                                                              ; { clk }                                                                                       ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                         ;                                                                                              ; { entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate }                ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                         ;                                                                                              ; { entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate }                ;
+; res_n                                                                                     ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                         ;                                                                                              ; { res_n }                                                                                     ;
+; taktteiler:rateclkdiv|tick                                                                ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                         ;                                                                                              ; { taktteiler:rateclkdiv|tick }                                                                ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; Generated ; 1.666  ; 600.0 MHz  ; 0.000 ; 0.833  ; 50.00      ; 2         ; 24          ;       ;        ;           ;            ; false    ; clk                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ; { U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] }   ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; 83.333 ; 12.0 MHz   ; 0.000 ; 41.666 ; 50.00      ; 50        ; 1           ;       ;        ;           ;            ; false    ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ; { U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk } ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; 70.000 ; 14.29 MHz  ; 0.000 ; 35.000 ; 50.00      ; 42        ; 1           ;       ;        ;           ;            ; false    ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ; { U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk } ;
++-------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                                              ;
++------------+-----------------+-------------------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                                ; Note ;
++------------+-----------------+-------------------------------------------------------------------------------------------+------+
+; 37.34 MHz  ; 37.34 MHz       ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 116.81 MHz ; 116.81 MHz      ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 177.59 MHz ; 177.59 MHz      ; taktteiler:rateclkdiv|tick                                                                ;      ;
++------------+-----------------+-------------------------------------------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                                                                                 ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+; Clock                                                                                     ; Slack   ; End Point TNS ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -36.344 ; -771.704      ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; -7.880  ; -7.880        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; -7.395  ; -7.395        ;
+; res_n                                                                                     ; -5.081  ; -9.758        ;
+; taktteiler:rateclkdiv|tick                                                                ; -4.631  ; -69.388       ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.005  ; -1274.253     ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                                                                ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                     ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.288 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.294 ; 0.000         ;
+; res_n                                                                                     ; 0.854 ; 0.000         ;
+; taktteiler:rateclkdiv|tick                                                                ; 1.101 ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 2.332 ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 2.376 ; 0.000         ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Recovery Summary                                                                             ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; taktteiler:rateclkdiv|tick                                                                ; -6.861 ; -109.616      ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.602 ; -6036.776     ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.170 ; -649.694      ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Removal Summary                                                                             ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                     ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.875 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 1.209 ; 0.000         ;
+; taktteiler:rateclkdiv|tick                                                                ; 4.255 ; 0.000         ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary                                                                  ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; taktteiler:rateclkdiv|tick                                                                ; -0.538 ; -12.903       ;
+; res_n                                                                                     ; 0.113  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 0.367  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 0.380  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.833  ; 0.000         ;
+; clk                                                                                       ; 9.949  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 33.562 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 40.893 ; 0.000         ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
+-----------------------------------------------
+; Slow 1100mV 85C Model Metastability Summary ;
+-----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 18
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 133.324 ns
+
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                                               ;
++------------+-----------------+-------------------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                                ; Note ;
++------------+-----------------+-------------------------------------------------------------------------------------------+------+
+; 36.15 MHz  ; 36.15 MHz       ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 116.13 MHz ; 116.13 MHz      ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 177.15 MHz ; 177.15 MHz      ; taktteiler:rateclkdiv|tick                                                                ;      ;
++------------+-----------------+-------------------------------------------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                                                                                  ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+; Clock                                                                                     ; Slack   ; End Point TNS ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -38.061 ; -808.243      ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; -7.966  ; -7.966        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; -7.424  ; -7.424        ;
+; res_n                                                                                     ; -5.005  ; -9.578        ;
+; taktteiler:rateclkdiv|tick                                                                ; -4.645  ; -69.637       ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.751  ; -1197.362     ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                                                                                 ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                     ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.268 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.285 ; 0.000         ;
+; res_n                                                                                     ; 0.764 ; 0.000         ;
+; taktteiler:rateclkdiv|tick                                                                ; 1.148 ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 2.232 ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 2.352 ; 0.000         ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Recovery Summary                                                                              ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; taktteiler:rateclkdiv|tick                                                                ; -6.861 ; -109.611      ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.461 ; -5883.333     ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.106 ; -643.137      ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Removal Summary                                                                              ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                     ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.789 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.978 ; 0.000         ;
+; taktteiler:rateclkdiv|tick                                                                ; 4.418 ; 0.000         ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary                                                                   ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; taktteiler:rateclkdiv|tick                                                                ; -0.538 ; -12.759       ;
+; res_n                                                                                     ; 0.115  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 0.341  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 0.350  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.833  ; 0.000         ;
+; clk                                                                                       ; 9.980  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 33.520 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 40.813 ; 0.000         ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
+----------------------------------------------
+; Slow 1100mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 18
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 133.259 ns
+
+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary                                                                                 ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+; Clock                                                                                     ; Slack   ; End Point TNS ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -16.359 ; -337.902      ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; -2.910  ; -2.910        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; -2.712  ; -2.712        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.628  ; -756.115      ;
+; res_n                                                                                     ; -2.025  ; -3.834        ;
+; taktteiler:rateclkdiv|tick                                                                ; -1.991  ; -29.174       ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                                                                                 ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; res_n                                                                                     ; -0.017 ; -0.017        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.151  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.156  ; 0.000         ;
+; taktteiler:rateclkdiv|tick                                                                ; 0.321  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 0.968  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 0.995  ; 0.000         ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Recovery Summary                                                                             ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; taktteiler:rateclkdiv|tick                                                                ; -3.522 ; -56.292       ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.420 ; -360.613      ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.389 ; -3175.846     ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Removal Summary                                                                             ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                     ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.591 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.767 ; 0.000         ;
+; taktteiler:rateclkdiv|tick                                                                ; 2.020 ; 0.000         ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary                                                                  ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; res_n                                                                                     ; -0.138 ; -0.455        ;
+; taktteiler:rateclkdiv|tick                                                                ; 0.108  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 0.465  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 0.470  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.833  ; 0.000         ;
+; clk                                                                                       ; 9.643  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 33.881 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 41.192 ; 0.000         ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
+-----------------------------------------------
+; Fast 1100mV 85C Model Metastability Summary ;
+-----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 18
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 136.694 ns
+
+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary                                                                                  ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+; Clock                                                                                     ; Slack   ; End Point TNS ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -15.520 ; -318.905      ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; -2.664  ; -2.664        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; -2.469  ; -2.469        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.302  ; -693.736      ;
+; taktteiler:rateclkdiv|tick                                                                ; -1.763  ; -25.815       ;
+; res_n                                                                                     ; -1.675  ; -3.154        ;
++-------------------------------------------------------------------------------------------+---------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                                                                                  ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; res_n                                                                                     ; -0.063 ; -0.063        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.140  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.141  ; 0.000         ;
+; taktteiler:rateclkdiv|tick                                                                ; 0.328  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 0.910  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 0.920  ; 0.000         ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Recovery Summary                                                                              ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; taktteiler:rateclkdiv|tick                                                                ; -3.481 ; -55.636       ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.342 ; -352.299      ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.300 ; -3087.268     ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Removal Summary                                                                              ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                     ; Slack ; End Point TNS ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.540 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.636 ; 0.000         ;
+; taktteiler:rateclkdiv|tick                                                                ; 2.027 ; 0.000         ;
++-------------------------------------------------------------------------------------------+-------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary                                                                   ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                     ; Slack  ; End Point TNS ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+; res_n                                                                                     ; -0.108 ; -0.352        ;
+; taktteiler:rateclkdiv|tick                                                                ; 0.124  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 0.463  ; 0.000         ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 0.465  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.833  ; 0.000         ;
+; clk                                                                                       ; 9.632  ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 33.884 ; 0.000         ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 41.185 ; 0.000         ;
++-------------------------------------------------------------------------------------------+--------+---------------+
+
+
+----------------------------------------------
+; Fast 1100mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 18
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 136.965 ns
+
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                                         ;
++--------------------------------------------------------------------------------------------+-----------+--------+-----------+---------+---------------------+
+; Clock                                                                                      ; Setup     ; Hold   ; Recovery  ; Removal ; Minimum Pulse Width ;
++--------------------------------------------------------------------------------------------+-----------+--------+-----------+---------+---------------------+
+; Worst-case Slack                                                                           ; -38.061   ; -0.063 ; -6.861    ; 0.540   ; -0.538              ;
+;  U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A    ; N/A       ; N/A     ; 0.833               ;
+;  U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -38.061   ; 0.141  ; -6.170    ; 0.636   ; 40.813              ;
+;  U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.005    ; 0.140  ; -6.602    ; 0.540   ; 33.520              ;
+;  clk                                                                                       ; N/A       ; N/A    ; N/A       ; N/A     ; 9.632               ;
+;  entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; -7.424    ; 0.910  ; N/A       ; N/A     ; 0.350               ;
+;  entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; -7.966    ; 0.920  ; N/A       ; N/A     ; 0.341               ;
+;  res_n                                                                                     ; -5.081    ; -0.063 ; N/A       ; N/A     ; -0.138              ;
+;  taktteiler:rateclkdiv|tick                                                                ; -4.645    ; 0.321  ; -6.861    ; 2.020   ; -0.538              ;
+; Design-wide TNS                                                                            ; -2140.378 ; -0.063 ; -6796.086 ; 0.0     ; -12.903             ;
+;  U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A    ; N/A       ; N/A     ; 0.000               ;
+;  U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -808.243  ; 0.000  ; -649.694  ; 0.000   ; 0.000               ;
+;  U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; -1274.253 ; 0.000  ; -6036.776 ; 0.000   ; 0.000               ;
+;  clk                                                                                       ; N/A       ; N/A    ; N/A       ; N/A     ; 0.000               ;
+;  entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; -7.424    ; 0.000  ; N/A       ; N/A     ; 0.000               ;
+;  entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; -7.966    ; 0.000  ; N/A       ; N/A     ; 0.000               ;
+;  res_n                                                                                     ; -9.758    ; -0.063 ; N/A       ; N/A     ; -0.455              ;
+;  taktteiler:rateclkdiv|tick                                                                ; -69.637   ; 0.000  ; -109.616  ; 0.000   ; -12.903             ;
++--------------------------------------------------------------------------------------------+-----------+--------+-----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; SSM2603_bclk  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SSM2603_cclk  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SSM2603_pbdat ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SSM2603_pblrc ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ack_error     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; cpurunstd     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; statusstd[0]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; statusstd[1]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; statusstd[2]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; statusstd[3]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; statusstd[4]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; statusstd[5]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; statusstd[6]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; statusstd[7]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SSM2603_scl   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SSM2603_sda   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Input Transition Times                                                 ;
++---------------------+--------------+-----------------+-----------------+
+; Pin                 ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+--------------+-----------------+-----------------+
+; SSM2603_scl         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SSM2603_sda         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; res_n               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedSongsstd[0] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedSongsstd[1] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedSongsstd[2] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedSongsstd[3] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedSongsstd[4] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedSongsstd[5] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedSongsstd[6] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; selectedSongsstd[7] ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++---------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; SSM2603_bclk  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0495 V           ; 0.18 V                               ; 0.115 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0495 V          ; 0.18 V                              ; 0.115 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_cclk  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0492 V           ; 0.181 V                              ; 0.116 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0492 V          ; 0.181 V                             ; 0.116 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_pbdat ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.19e-07 V                   ; 2.4 V               ; -0.039 V            ; 0.21 V                               ; 0.145 V                              ; 4.67e-10 s                  ; 4.63e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.19e-07 V                  ; 2.4 V              ; -0.039 V           ; 0.21 V                              ; 0.145 V                             ; 4.67e-10 s                 ; 4.63e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_pblrc ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.88e-07 V                   ; 2.35 V              ; -0.0185 V           ; 0.153 V                              ; 0.099 V                              ; 4.6e-10 s                   ; 4.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.88e-07 V                  ; 2.35 V             ; -0.0185 V          ; 0.153 V                             ; 0.099 V                             ; 4.6e-10 s                  ; 4.48e-10 s                 ; No                        ; Yes                       ;
+; ack_error     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.88e-07 V                   ; 2.35 V              ; -0.0185 V           ; 0.153 V                              ; 0.099 V                              ; 4.6e-10 s                   ; 4.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.88e-07 V                  ; 2.35 V             ; -0.0185 V          ; 0.153 V                             ; 0.099 V                             ; 4.6e-10 s                  ; 4.48e-10 s                 ; No                        ; Yes                       ;
+; cpurunstd     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.19e-07 V                   ; 2.4 V               ; -0.039 V            ; 0.21 V                               ; 0.145 V                              ; 4.67e-10 s                  ; 4.63e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.19e-07 V                  ; 2.4 V              ; -0.039 V           ; 0.21 V                              ; 0.145 V                             ; 4.67e-10 s                 ; 4.63e-10 s                 ; No                        ; Yes                       ;
+; statusstd[0]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0495 V           ; 0.18 V                               ; 0.115 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0495 V          ; 0.18 V                              ; 0.115 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; statusstd[1]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0492 V           ; 0.181 V                              ; 0.116 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0492 V          ; 0.181 V                             ; 0.116 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; statusstd[2]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0495 V           ; 0.18 V                               ; 0.115 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0495 V          ; 0.18 V                              ; 0.115 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; statusstd[3]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0492 V           ; 0.181 V                              ; 0.116 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0492 V          ; 0.181 V                             ; 0.116 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; statusstd[4]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.88e-07 V                   ; 2.35 V              ; -0.0185 V           ; 0.153 V                              ; 0.099 V                              ; 4.6e-10 s                   ; 4.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.88e-07 V                  ; 2.35 V             ; -0.0185 V          ; 0.153 V                             ; 0.099 V                             ; 4.6e-10 s                  ; 4.48e-10 s                 ; No                        ; Yes                       ;
+; statusstd[5]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0495 V           ; 0.18 V                               ; 0.115 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0495 V          ; 0.18 V                              ; 0.115 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; statusstd[6]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.19e-07 V                   ; 2.4 V               ; -0.039 V            ; 0.21 V                               ; 0.145 V                              ; 4.67e-10 s                  ; 4.63e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.19e-07 V                  ; 2.4 V              ; -0.039 V           ; 0.21 V                              ; 0.145 V                             ; 4.67e-10 s                 ; 4.63e-10 s                 ; No                        ; Yes                       ;
+; statusstd[7]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.19e-07 V                   ; 2.4 V               ; -0.039 V            ; 0.21 V                               ; 0.145 V                              ; 4.67e-10 s                  ; 4.63e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.19e-07 V                  ; 2.4 V              ; -0.039 V           ; 0.21 V                              ; 0.145 V                             ; 4.67e-10 s                 ; 4.63e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_scl   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0495 V           ; 0.18 V                               ; 0.115 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0495 V          ; 0.18 V                              ; 0.115 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_sda   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.88e-07 V                   ; 2.35 V              ; -0.0185 V           ; 0.153 V                              ; 0.099 V                              ; 4.6e-10 s                   ; 4.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.88e-07 V                  ; 2.35 V             ; -0.0185 V          ; 0.153 V                             ; 0.099 V                             ; 4.6e-10 s                  ; 4.48e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; SSM2603_bclk  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.0315 V           ; 0.205 V                              ; 0.182 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.0315 V          ; 0.205 V                             ; 0.182 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_cclk  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.032 V            ; 0.204 V                              ; 0.181 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.032 V           ; 0.204 V                             ; 0.181 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_pbdat ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.56e-05 V                   ; 2.38 V              ; -0.026 V            ; 0.249 V                              ; 0.089 V                              ; 4.95e-10 s                  ; 6.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.56e-05 V                  ; 2.38 V             ; -0.026 V           ; 0.249 V                             ; 0.089 V                             ; 4.95e-10 s                 ; 6.01e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_pblrc ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.27e-05 V                   ; 2.34 V              ; -0.0089 V           ; 0.206 V                              ; 0.058 V                              ; 4.97e-10 s                  ; 5.13e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.27e-05 V                  ; 2.34 V             ; -0.0089 V          ; 0.206 V                             ; 0.058 V                             ; 4.97e-10 s                 ; 5.13e-10 s                 ; Yes                       ; Yes                       ;
+; ack_error     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.27e-05 V                   ; 2.34 V              ; -0.0089 V           ; 0.206 V                              ; 0.058 V                              ; 4.97e-10 s                  ; 5.13e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.27e-05 V                  ; 2.34 V             ; -0.0089 V          ; 0.206 V                             ; 0.058 V                             ; 4.97e-10 s                 ; 5.13e-10 s                 ; Yes                       ; Yes                       ;
+; cpurunstd     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.56e-05 V                   ; 2.38 V              ; -0.026 V            ; 0.249 V                              ; 0.089 V                              ; 4.95e-10 s                  ; 6.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.56e-05 V                  ; 2.38 V             ; -0.026 V           ; 0.249 V                             ; 0.089 V                             ; 4.95e-10 s                 ; 6.01e-10 s                 ; No                        ; Yes                       ;
+; statusstd[0]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.0315 V           ; 0.205 V                              ; 0.182 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.0315 V          ; 0.205 V                             ; 0.182 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; statusstd[1]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.032 V            ; 0.204 V                              ; 0.181 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.032 V           ; 0.204 V                             ; 0.181 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; statusstd[2]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.0315 V           ; 0.205 V                              ; 0.182 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.0315 V          ; 0.205 V                             ; 0.182 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; statusstd[3]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.032 V            ; 0.204 V                              ; 0.181 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.032 V           ; 0.204 V                             ; 0.181 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; statusstd[4]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.27e-05 V                   ; 2.34 V              ; -0.0089 V           ; 0.206 V                              ; 0.058 V                              ; 4.97e-10 s                  ; 5.13e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.27e-05 V                  ; 2.34 V             ; -0.0089 V          ; 0.206 V                             ; 0.058 V                             ; 4.97e-10 s                 ; 5.13e-10 s                 ; Yes                       ; Yes                       ;
+; statusstd[5]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.0315 V           ; 0.205 V                              ; 0.182 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.0315 V          ; 0.205 V                             ; 0.182 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; statusstd[6]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.56e-05 V                   ; 2.38 V              ; -0.026 V            ; 0.249 V                              ; 0.089 V                              ; 4.95e-10 s                  ; 6.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.56e-05 V                  ; 2.38 V             ; -0.026 V           ; 0.249 V                             ; 0.089 V                             ; 4.95e-10 s                 ; 6.01e-10 s                 ; No                        ; Yes                       ;
+; statusstd[7]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.56e-05 V                   ; 2.38 V              ; -0.026 V            ; 0.249 V                              ; 0.089 V                              ; 4.95e-10 s                  ; 6.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.56e-05 V                  ; 2.38 V             ; -0.026 V           ; 0.249 V                             ; 0.089 V                             ; 4.95e-10 s                 ; 6.01e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_scl   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.0315 V           ; 0.205 V                              ; 0.182 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.0315 V          ; 0.205 V                             ; 0.182 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; SSM2603_sda   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.27e-05 V                   ; 2.34 V              ; -0.0089 V           ; 0.206 V                              ; 0.058 V                              ; 4.97e-10 s                  ; 5.13e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.27e-05 V                  ; 2.34 V             ; -0.0089 V          ; 0.206 V                             ; 0.058 V                             ; 4.97e-10 s                 ; 5.13e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; SSM2603_bclk  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; SSM2603_cclk  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; SSM2603_pbdat ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; SSM2603_pblrc ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; ack_error     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; cpurunstd     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; statusstd[0]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; statusstd[1]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; statusstd[2]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; statusstd[3]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; statusstd[4]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; statusstd[5]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; statusstd[6]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; statusstd[7]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; SSM2603_scl   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; SSM2603_sda   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; SSM2603_bclk  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; SSM2603_cclk  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; SSM2603_pbdat ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; SSM2603_pblrc ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; ack_error     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; cpurunstd     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; statusstd[0]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; statusstd[1]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; statusstd[2]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; statusstd[3]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; statusstd[4]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; statusstd[5]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; statusstd[6]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; statusstd[7]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; SSM2603_scl   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; SSM2603_sda   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                                                                                                           ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
+; From Clock                                                                                ; To Clock                                                                                  ; RR Paths     ; FR Paths     ; RF Paths ; FF Paths ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 936          ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 936          ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; res_n                                                                                     ; 0            ; 0            ; 26       ; 0        ;
+; taktteiler:rateclkdiv|tick                                                                ; taktteiler:rateclkdiv|tick                                                                ; 408          ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; taktteiler:rateclkdiv|tick                                                                ; 48           ; 0            ; 0        ; 0        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; > 2147483647 ; 0            ; 0        ; 0        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; > 2147483647 ; 0            ; 0        ; 0        ;
+; res_n                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0            ; > 2147483647 ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 21372        ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; > 2147483647 ; 0            ; 0        ; 0        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 23           ; 22           ; 0        ; 0        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 23           ; 22           ; 0        ; 0        ;
+; res_n                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 342          ; 342          ; 0        ; 0        ;
+; taktteiler:rateclkdiv|tick                                                                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 64           ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; > 2147483647 ; 0            ; 0        ; 0        ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
+; From Clock                                                                                ; To Clock                                                                                  ; RR Paths     ; FR Paths     ; RF Paths ; FF Paths ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; 936          ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; 936          ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; res_n                                                                                     ; 0            ; 0            ; 26       ; 0        ;
+; taktteiler:rateclkdiv|tick                                                                ; taktteiler:rateclkdiv|tick                                                                ; 408          ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; taktteiler:rateclkdiv|tick                                                                ; 48           ; 0            ; 0        ; 0        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; > 2147483647 ; 0            ; 0        ; 0        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; > 2147483647 ; 0            ; 0        ; 0        ;
+; res_n                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0            ; > 2147483647 ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 21372        ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; > 2147483647 ; 0            ; 0        ; 0        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 23           ; 22           ; 0        ; 0        ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 23           ; 22           ; 0        ; 0        ;
+; res_n                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 342          ; 342          ; 0        ; 0        ;
+; taktteiler:rateclkdiv|tick                                                                ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 64           ; 0            ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; > 2147483647 ; 0            ; 0        ; 0        ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+--------------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                                ; To Clock                                                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; res_n                                                                                     ; taktteiler:rateclkdiv|tick                                                                ; 16       ; 16       ; 0        ; 0        ;
+; res_n                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 106      ; 106      ; 0        ; 0        ;
+; res_n                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 1037     ; 1037     ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 150      ; 0        ; 0        ; 0        ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                                                                                                                                                 ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                                ; To Clock                                                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; res_n                                                                                     ; taktteiler:rateclkdiv|tick                                                                ; 16       ; 16       ; 0        ; 0        ;
+; res_n                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 106      ; 106      ; 0        ; 0        ;
+; res_n                                                                                     ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 1037     ; 1037     ; 0        ; 0        ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 150      ; 0        ; 0        ; 0        ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 730   ; 730  ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 20    ; 20   ;
++---------------------------------+-------+------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+-------------+
+; Target                                                                                    ; Clock                                                                                     ; Type      ; Status      ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+-------------+
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; Generated ; Constrained ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; Constrained ;
+; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; Constrained ;
+; clk                                                                                       ; clk                                                                                       ; Base      ; Constrained ;
+; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate                ; Base      ; Constrained ;
+; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate                ; Base      ; Constrained ;
+; res_n                                                                                     ; res_n                                                                                     ; Base      ; Constrained ;
+; taktteiler:rateclkdiv|tick                                                                ; taktteiler:rateclkdiv|tick                                                                ; Base      ; Constrained ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                  ;
++---------------------+--------------------------------------------------------------------------------------+
+; Input Port          ; Comment                                                                              ;
++---------------------+--------------------------------------------------------------------------------------+
+; SSM2603_scl         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_sda         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; SSM2603_bclk  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_cclk  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_pbdat ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_pblrc ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_scl   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_sda   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ack_error     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpurunstd     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                  ;
++---------------------+--------------------------------------------------------------------------------------+
+; Input Port          ; Comment                                                                              ;
++---------------------+--------------------------------------------------------------------------------------+
+; SSM2603_scl         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_sda         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; selectedSongsstd[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; SSM2603_bclk  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_cclk  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_pbdat ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_pblrc ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_scl   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SSM2603_sda   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ack_error     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cpurunstd     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; statusstd[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Processing started: Fri Mar 15 10:42:27 2024
+Info: Command: quartus_sta NESPlayertoplevel -c NESPlayertoplevel
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 4 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'NESPlayertoplevel.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
+Info (332110): Deriving PLL clocks
+    Info (332110): create_clock -period 20.000 -waveform {0.000 10.000} -name clk clk
+    Info (332110): create_generated_clock -source {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin} -divide_by 2 -multiply_by 24 -duty_cycle 50.00 -name {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]} {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]}
+    Info (332110): create_generated_clock -source {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 50 -duty_cycle 50.00 -name {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk} {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}
+    Info (332110): create_generated_clock -source {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 42 -duty_cycle 50.00 -name {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk} {U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk}
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name taktteiler:rateclkdiv|tick taktteiler:rateclkdiv|tick
+    Info (332105): create_clock -period 1.000 -name res_n res_n
+    Info (332105): create_clock -period 1.000 -name entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate
+    Info (332105): create_clock -period 1.000 -name entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate
+Warning (332125): Found combinational loop of 2 nodes File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 143
+    Warning (332126): Node "codecstp|Selector41~0|combout"
+    Warning (332126): Node "codecstp|Selector41~0|dataf"
+Warning (332125): Found combinational loop of 5 nodes File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 143
+    Warning (332126): Node "codecstp|Selector42~0|combout"
+    Warning (332126): Node "codecstp|Selector42~0|datac"
+    Warning (332126): Node "codecstp|Mux40~0|dataf"
+    Warning (332126): Node "codecstp|Mux40~0|combout"
+    Warning (332126): Node "codecstp|Selector42~0|dataf"
+Warning (332125): Found combinational loop of 2 nodes File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 143
+    Warning (332126): Node "codecstp|Selector40~1|combout"
+    Warning (332126): Node "codecstp|Selector40~1|datad"
+Warning (332125): Found combinational loop of 2 nodes File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 143
+    Warning (332126): Node "codecstp|Selector44~0|combout"
+    Warning (332126): Node "codecstp|Selector44~0|datac"
+Warning (332125): Found combinational loop of 2 nodes File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 143
+    Warning (332126): Node "codecstp|Selector45~3|combout"
+    Warning (332126): Node "codecstp|Selector45~3|datad"
+Warning (332125): Found combinational loop of 5 nodes File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 143
+    Warning (332126): Node "codecstp|Selector46~0|combout"
+    Warning (332126): Node "codecstp|Mux44~0|dataf"
+    Warning (332126): Node "codecstp|Mux44~0|combout"
+    Warning (332126): Node "codecstp|Selector46~0|datae"
+    Warning (332126): Node "codecstp|Selector46~0|dataf"
+Warning (332125): Found combinational loop of 2 nodes File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 143
+    Warning (332126): Node "codecstp|Selector43~0|combout"
+    Warning (332126): Node "codecstp|Selector43~0|dataf"
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[3]  to: clkout
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1100mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -36.344
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -36.344            -771.704 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -7.880              -7.880 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):    -7.395              -7.395 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):    -5.081              -9.758 res_n 
+    Info (332119):    -4.631             -69.388 taktteiler:rateclkdiv|tick 
+    Info (332119):    -4.005           -1274.253 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.288
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.288               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.294               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.854               0.000 res_n 
+    Info (332119):     1.101               0.000 taktteiler:rateclkdiv|tick 
+    Info (332119):     2.332               0.000 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     2.376               0.000 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+Info (332146): Worst-case recovery slack is -6.861
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.861            -109.616 taktteiler:rateclkdiv|tick 
+    Info (332119):    -6.602           -6036.776 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -6.170            -649.694 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.875
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.875               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     1.209               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     4.255               0.000 taktteiler:rateclkdiv|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.538
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.538             -12.903 taktteiler:rateclkdiv|tick 
+    Info (332119):     0.113               0.000 res_n 
+    Info (332119):     0.367               0.000 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.380               0.000 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.833               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.949               0.000 clk 
+    Info (332119):    33.562               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    40.893               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332114): Report Metastability: Found 18 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 18
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 133.324 ns
+    Info (332114): 
+Info: Analyzing Slow 1100mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[3]  to: clkout
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -38.061
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -38.061            -808.243 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -7.966              -7.966 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):    -7.424              -7.424 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):    -5.005              -9.578 res_n 
+    Info (332119):    -4.645             -69.637 taktteiler:rateclkdiv|tick 
+    Info (332119):    -3.751           -1197.362 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.268
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.268               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.285               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.764               0.000 res_n 
+    Info (332119):     1.148               0.000 taktteiler:rateclkdiv|tick 
+    Info (332119):     2.232               0.000 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     2.352               0.000 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+Info (332146): Worst-case recovery slack is -6.861
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.861            -109.611 taktteiler:rateclkdiv|tick 
+    Info (332119):    -6.461           -5883.333 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -6.106            -643.137 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.789
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.789               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.978               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     4.418               0.000 taktteiler:rateclkdiv|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.538
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.538             -12.759 taktteiler:rateclkdiv|tick 
+    Info (332119):     0.115               0.000 res_n 
+    Info (332119):     0.341               0.000 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.350               0.000 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.833               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.980               0.000 clk 
+    Info (332119):    33.520               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    40.813               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332114): Report Metastability: Found 18 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 18
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 133.259 ns
+    Info (332114): 
+Info: Analyzing Fast 1100mV 85C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[3]  to: clkout
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -16.359
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -16.359            -337.902 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -2.910              -2.910 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):    -2.712              -2.712 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):    -2.628            -756.115 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -2.025              -3.834 res_n 
+    Info (332119):    -1.991             -29.174 taktteiler:rateclkdiv|tick 
+Info (332146): Worst-case hold slack is -0.017
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.017              -0.017 res_n 
+    Info (332119):     0.151               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.156               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.321               0.000 taktteiler:rateclkdiv|tick 
+    Info (332119):     0.968               0.000 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.995               0.000 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+Info (332146): Worst-case recovery slack is -3.522
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.522             -56.292 taktteiler:rateclkdiv|tick 
+    Info (332119):    -3.420            -360.613 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -3.389           -3175.846 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.591
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.591               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.767               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     2.020               0.000 taktteiler:rateclkdiv|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.138
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.138              -0.455 res_n 
+    Info (332119):     0.108               0.000 taktteiler:rateclkdiv|tick 
+    Info (332119):     0.465               0.000 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.470               0.000 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.833               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.643               0.000 clk 
+    Info (332119):    33.881               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    41.192               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332114): Report Metastability: Found 18 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 18
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 136.694 ns
+    Info (332114): 
+Info: Analyzing Fast 1100mV 0C Model
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[3]  to: clkout
+    Info (332098): Cell: U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -15.520
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -15.520            -318.905 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -2.664              -2.664 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):    -2.469              -2.469 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):    -2.302            -693.736 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -1.763             -25.815 taktteiler:rateclkdiv|tick 
+    Info (332119):    -1.675              -3.154 res_n 
+Info (332146): Worst-case hold slack is -0.063
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.063              -0.063 res_n 
+    Info (332119):     0.140               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.141               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.328               0.000 taktteiler:rateclkdiv|tick 
+    Info (332119):     0.910               0.000 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.920               0.000 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+Info (332146): Worst-case recovery slack is -3.481
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.481             -55.636 taktteiler:rateclkdiv|tick 
+    Info (332119):    -3.342            -352.299 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -3.300           -3087.268 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.540
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.540               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.636               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     2.027               0.000 taktteiler:rateclkdiv|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.108
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.108              -0.352 res_n 
+    Info (332119):     0.124               0.000 taktteiler:rateclkdiv|tick 
+    Info (332119):     0.463               0.000 entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.465               0.000 entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate 
+    Info (332119):     0.833               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.632               0.000 clk 
+    Info (332119):    33.884               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    41.185               0.000 U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332114): Report Metastability: Found 18 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 18
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 136.965 ns
+    Info (332114): 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 34 warnings
+    Info: Peak virtual memory: 1173 megabytes
+    Info: Processing ended: Fri Mar 15 10:42:37 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:26
+
+

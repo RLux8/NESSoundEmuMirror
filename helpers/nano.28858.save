@@ -1,0 +1,8 @@
+busaccess : entity audiotest_lib.boolstdlogicbusconverter
+    generic map (dataw => 8)
+    port map (
+      databus => data,
+      datafrombus => memdatain,
+      datatobus => memdataout,
+      rd => rd
+    );

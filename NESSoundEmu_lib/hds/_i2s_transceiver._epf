@@ -1,0 +1,2 @@
+DEFAULT_ARCHITECTURE atom logic
+DEFAULT_FILE atom i2s_transceiver_logic.vhd

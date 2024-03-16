@@ -1,0 +1,122 @@
+
+State Machine - |NESPlayertoplevel|i2c_master:U_0|state
+Name state.stop state.mstr_ack state.slv_ack2 state.rd state.wr state.slv_ack1 state.command state.start state.ready 
+state.ready 0 0 0 0 0 0 0 0 0 
+state.start 0 0 0 0 0 0 0 1 1 
+state.command 0 0 0 0 0 0 1 0 1 
+state.slv_ack1 0 0 0 0 0 1 0 0 1 
+state.wr 0 0 0 0 1 0 0 0 1 
+state.rd 0 0 0 1 0 0 0 0 1 
+state.slv_ack2 0 0 1 0 0 0 0 0 1 
+state.mstr_ack 0 1 0 0 0 0 0 0 1 
+state.stop 1 0 0 0 0 0 0 0 1 
+
+State Machine - |NESPlayertoplevel|entireNES:neswrap|twoportarbstdlogic:arbi|activePort
+Name activePort.BID activePort.AID activePort.NONE 
+activePort.NONE 0 0 0 
+activePort.AID 0 1 1 
+activePort.BID 1 0 1 
+
+State Machine - |NESPlayertoplevel|entireNES:neswrap|twoportarbstdlogic:arbi|\accessArbiterfsmtransistion:currentstate_int
+Name \accessArbiterfsmtransistion:currentstate_int.COMPLETINGREQ \accessArbiterfsmtransistion:currentstate_int.HANDLINGREQ \accessArbiterfsmtransistion:currentstate_int.SETTINGDATA \accessArbiterfsmtransistion:currentstate_int.WAITINGFORREQ 
+\accessArbiterfsmtransistion:currentstate_int.WAITINGFORREQ 0 0 0 0 
+\accessArbiterfsmtransistion:currentstate_int.SETTINGDATA 0 0 1 1 
+\accessArbiterfsmtransistion:currentstate_int.HANDLINGREQ 0 1 0 1 
+\accessArbiterfsmtransistion:currentstate_int.COMPLETINGREQ 1 0 0 1 
+
+State Machine - |NESPlayertoplevel|entireNES:neswrap|namco163:nam163|namco163statemachine:n163machine|\fsm_outputs:last_state
+Name \fsm_outputs:last_state.WAIT3 \fsm_outputs:last_state.WAIT2 \fsm_outputs:last_state.WAIT1 \fsm_outputs:last_state.STOREPHASE3 \fsm_outputs:last_state.STOREPHASE2 \fsm_outputs:last_state.STOREPHASE1 \fsm_outputs:last_state.GETSAMPLE \fsm_outputs:last_state.GETVOLUME \fsm_outputs:last_state.GETOFFSET \fsm_outputs:last_state.GETFREQ3 \fsm_outputs:last_state.GETFREQ2 \fsm_outputs:last_state.GETFREQ1 \fsm_outputs:last_state.GETPHASE3 \fsm_outputs:last_state.GETPHASE2 \fsm_outputs:last_state.GETPHASE1 \fsm_outputs:last_state.INIT 
+\fsm_outputs:last_state.INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+\fsm_outputs:last_state.GETPHASE1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+\fsm_outputs:last_state.GETPHASE2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+\fsm_outputs:last_state.GETPHASE3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+\fsm_outputs:last_state.GETFREQ1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+\fsm_outputs:last_state.GETFREQ2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+\fsm_outputs:last_state.GETFREQ3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+\fsm_outputs:last_state.GETOFFSET 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+\fsm_outputs:last_state.GETVOLUME 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+\fsm_outputs:last_state.GETSAMPLE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+\fsm_outputs:last_state.STOREPHASE1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+\fsm_outputs:last_state.STOREPHASE2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+\fsm_outputs:last_state.STOREPHASE3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+\fsm_outputs:last_state.WAIT1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\fsm_outputs:last_state.WAIT2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\fsm_outputs:last_state.WAIT3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |NESPlayertoplevel|entireNES:neswrap|namco163:nam163|namco163statemachine:n163machine|currentstate
+Name currentstate.WAIT3 currentstate.WAIT2 currentstate.WAIT1 currentstate.STOREPHASE3 currentstate.STOREPHASE2 currentstate.STOREPHASE1 currentstate.GETSAMPLE currentstate.GETVOLUME currentstate.GETOFFSET currentstate.GETFREQ3 currentstate.GETFREQ2 currentstate.GETFREQ1 currentstate.GETPHASE3 currentstate.GETPHASE2 currentstate.GETPHASE1 currentstate.INIT 
+currentstate.INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+currentstate.GETPHASE1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+currentstate.GETPHASE2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+currentstate.GETPHASE3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+currentstate.GETFREQ1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+currentstate.GETFREQ2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+currentstate.GETFREQ3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+currentstate.GETOFFSET 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+currentstate.GETVOLUME 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+currentstate.GETSAMPLE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+currentstate.STOREPHASE1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+currentstate.STOREPHASE2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+currentstate.STOREPHASE3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+currentstate.WAIT1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+currentstate.WAIT2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+currentstate.WAIT3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |NESPlayertoplevel|entireNES:neswrap|mx65withtick:mx65mod|state
+Name state.TMOD state.TFIX state.RTS5 state.BRK6 state.BRK5 state.IZX4 state.JMPIND4 state.RTS4_RTI5 state.IZY3 state.BR3 state.RTI3 state.RTS3_RTI4 state.PLP3 state.PLA3 state.BRK3_JSR4 state.TWRITE state.TREAD state.ABY2 state.ABX2 state.ZPY2 state.IZY2_IZX3_JMPIND3 state.IZX2_ZPX2 state.BR2 state.ABS2 state.JMPABS2_JSR5 state.JSR2 state.PLX2_RTX2 state.PHP2_BRK4 state.PHA2 state.BRK2_JSR3 state.T1 state.T0 
+state.T0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.T1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.BRK2_JSR3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.PHA2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.PHP2_BRK4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.PLX2_RTX2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.JSR2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.JMPABS2_JSR5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.ABS2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.BR2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.IZX2_ZPX2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.IZY2_IZX3_JMPIND3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.ZPY2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ABX2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ABY2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TREAD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TWRITE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.BRK3_JSR4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PLA3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PLP3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.RTS3_RTI4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.RTI3 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.BR3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.IZY3 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.RTS4_RTI5 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.JMPIND4 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.IZX4 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.BRK5 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.BRK6 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.RTS5 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TFIX 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TMOD 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |NESPlayertoplevel|codecsetup:codecstp|\fsm_state_transition:state
+Name \fsm_state_transition:state.I2CERROR \fsm_state_transition:state.DONE \fsm_state_transition:state.ENABLEDAC \fsm_state_transition:state.ENABLEDIGCORE \fsm_state_transition:state.WAITFORVMIDCAP \fsm_state_transition:state.WRITING \fsm_state_transition:state.WRITINGINIT \fsm_state_transition:state.POWERUP \fsm_state_transition:state.RESETCHIPWAIT \fsm_state_transition:state.INIT 
+\fsm_state_transition:state.INIT 0 0 0 0 0 0 0 0 0 0 
+\fsm_state_transition:state.RESETCHIPWAIT 0 0 0 0 0 0 0 0 1 1 
+\fsm_state_transition:state.POWERUP 0 0 0 0 0 0 0 1 0 1 
+\fsm_state_transition:state.WRITINGINIT 0 0 0 0 0 0 1 0 0 1 
+\fsm_state_transition:state.WRITING 0 0 0 0 0 1 0 0 0 1 
+\fsm_state_transition:state.WAITFORVMIDCAP 0 0 0 0 1 0 0 0 0 1 
+\fsm_state_transition:state.ENABLEDIGCORE 0 0 0 1 0 0 0 0 0 1 
+\fsm_state_transition:state.ENABLEDAC 0 0 1 0 0 0 0 0 0 1 
+\fsm_state_transition:state.DONE 0 1 0 0 0 0 0 0 0 1 
+\fsm_state_transition:state.I2CERROR 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |NESPlayertoplevel|SSM2603regwriter:regwr|\fsm_state_transition:state
+Name \fsm_state_transition:state.DONE4 \fsm_state_transition:state.DONE3 \fsm_state_transition:state.DONE2 \fsm_state_transition:state.DONE1 \fsm_state_transition:state.WRITINGBYTE2 \fsm_state_transition:state.WRITINGBYTE1 \fsm_state_transition:state.WAITI2C \fsm_state_transition:state.IDLE 
+\fsm_state_transition:state.IDLE 0 0 0 0 0 0 0 0 
+\fsm_state_transition:state.WAITI2C 0 0 0 0 0 0 1 1 
+\fsm_state_transition:state.WRITINGBYTE1 0 0 0 0 0 1 0 1 
+\fsm_state_transition:state.WRITINGBYTE2 0 0 0 0 1 0 0 1 
+\fsm_state_transition:state.DONE1 0 0 0 1 0 0 0 1 
+\fsm_state_transition:state.DONE2 0 0 1 0 0 0 0 1 
+\fsm_state_transition:state.DONE3 0 1 0 0 0 0 0 1 
+\fsm_state_transition:state.DONE4 1 0 0 0 0 0 0 1 

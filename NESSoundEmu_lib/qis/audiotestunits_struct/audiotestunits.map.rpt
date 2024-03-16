@@ -1,0 +1,983 @@
+Analysis & Synthesis report for audiotestunits
+Mon Dec 18 16:56:26 2023
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |audiotestunits|i2c_master:U_0|state
+  9. State Machine - |audiotestunits|codecsetup1:U_7|\fsm_state_transition:state
+ 10. State Machine - |audiotestunits|SSM2603regwriter:U_2|\fsm_state_transition:state
+ 11. User-Specified and Inferred Latches
+ 12. Logic Cells Representing Combinational Loops
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: i2c_master:U_0
+ 18. Parameter Settings for User Entity Instance: i2s_transceiver:U_1
+ 19. Parameter Settings for User Entity Instance: pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i
+ 20. Parameter Settings for User Entity Instance: taktteiler:U_4
+ 21. Port Connectivity Checks: "i2s_transceiver:U_1"
+ 22. Port Connectivity Checks: "i2c_master:U_0"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Dec 18 16:56:26 2023           ;
+; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Standard Edition ;
+; Revision Name                   ; audiotestunits                                  ;
+; Top-level Entity Name           ; audiotestunits                                  ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 216                                             ;
+; Total pins                      ; 18                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 1                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5cgxfc5c6f27c7     ;                    ;
+; Top-level entity name                                                           ; audiotestunits     ; audiotestunits     ;
+; Family name                                                                     ; cyclone v          ; Cyclone V          ;
+; Optimization Technique                                                          ; Area               ; Balanced           ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------------+-----------------+-----------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                                                   ; Library ;
++----------------------------------------+-----------------+-----------------------------+------------------------------------------------------------------------------------------------+---------+
+; ../../hdl/audiotestunits_entity.vhd    ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_entity.vhd    ;         ;
+; ../../hdl/i2c_master.vhd               ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/i2c_master.vhd               ;         ;
+; ../../hdl/i2s_transceiver_logic.vhd    ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/i2s_transceiver_logic.vhd    ;         ;
+; ../../hdl/ssm2603regwriter_entity.vhd  ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/ssm2603regwriter_entity.vhd  ;         ;
+; ../../hdl/SSM2603regwriter_behav.vhd   ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd   ;         ;
+; ../../hdl/testsoundctrl1_entity.vhd    ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_entity.vhd    ;         ;
+; ../../hdl/testsoundctrl1_behav.vhd     ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd     ;         ;
+; ../../hdl/taktteiler_entity.vhd        ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/taktteiler_entity.vhd        ;         ;
+; ../../hdl/taktteiler_behav.vhd         ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/taktteiler_behav.vhd         ;         ;
+; ../../hdl/pll5012new/pll5012new_0002.v ; yes             ; User Verilog HDL File       ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new/pll5012new_0002.v ;         ;
+; ../../hdl/pll5012new.vhd               ; yes             ; User Wizard-Generated File  ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new.vhd               ;         ;
+; ../../hdl/codecsetup1_entity.vhd       ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_entity.vhd       ;         ;
+; ../../hdl/codecsetup1_behav.vhd        ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd        ;         ;
+; ../../hdl/audiotestunits_struct.vhd    ; yes             ; User VHDL File              ; /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd    ;         ;
+; altera_pll.v                           ; yes             ; Megafunction                ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altera_pll.v                           ;         ;
++----------------------------------------+-----------------+-----------------------------+------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 182         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 302         ;
+;     -- 7 input functions                    ; 4           ;
+;     -- 6 input functions                    ; 26          ;
+;     -- 5 input functions                    ; 52          ;
+;     -- 4 input functions                    ; 33          ;
+;     -- <=3 input functions                  ; 187         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 216         ;
+;                                             ;             ;
+; I/O pins                                    ; 18          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Total PLLs                                  ; 1           ;
+;     -- PLLs                                 ; 1           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; res_n~input ;
+; Maximum fan-out                             ; 195         ;
+; Total fan-out                               ; 1962        ;
+; Average fan-out                             ; 3.52        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name      ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+------------------+--------------+
+; |audiotestunits                         ; 302 (0)             ; 216 (0)                   ; 0                 ; 0          ; 18   ; 0            ; |audiotestunits                                                                        ; audiotestunits   ; work         ;
+;    |SSM2603regwriter:U_2|               ; 46 (46)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|SSM2603regwriter:U_2                                                   ; SSM2603regwriter ; work         ;
+;    |codecsetup1:U_7|                    ; 66 (66)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|codecsetup1:U_7                                                        ; codecsetup1      ; work         ;
+;    |i2c_master:U_0|                     ; 66 (66)             ; 40 (40)                   ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|i2c_master:U_0                                                         ; i2c_master       ; work         ;
+;    |i2s_transceiver:U_1|                ; 98 (98)             ; 99 (99)                   ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|i2s_transceiver:U_1                                                    ; i2s_transceiver  ; work         ;
+;    |pll5012new:U_5|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|pll5012new:U_5                                                         ; pll5012new       ; work         ;
+;       |pll5012new_0002:pll5012new_inst| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|pll5012new:U_5|pll5012new_0002:pll5012new_inst                         ; pll5012new_0002  ; work         ;
+;          |altera_pll:altera_pll_i|      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i ; altera_pll       ; work         ;
+;    |taktteiler:U_4|                     ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|taktteiler:U_4                                                         ; taktteiler       ; work         ;
+;    |testsoundctrl1:U_3|                 ; 23 (23)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |audiotestunits|testsoundctrl1:U_3                                                     ; testsoundctrl1   ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |audiotestunits|i2c_master:U_0|state                                                                                             ;
++----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
+; Name           ; state.stop ; state.mstr_ack ; state.slv_ack2 ; state.rd ; state.wr ; state.slv_ack1 ; state.command ; state.start ; state.ready ;
++----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
+; state.ready    ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0           ; 0           ;
+; state.start    ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 1           ; 1           ;
+; state.command  ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 1             ; 0           ; 1           ;
+; state.slv_ack1 ; 0          ; 0              ; 0              ; 0        ; 0        ; 1              ; 0             ; 0           ; 1           ;
+; state.wr       ; 0          ; 0              ; 0              ; 0        ; 1        ; 0              ; 0             ; 0           ; 1           ;
+; state.rd       ; 0          ; 0              ; 0              ; 1        ; 0        ; 0              ; 0             ; 0           ; 1           ;
+; state.slv_ack2 ; 0          ; 0              ; 1              ; 0        ; 0        ; 0              ; 0             ; 0           ; 1           ;
+; state.mstr_ack ; 0          ; 1              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0           ; 1           ;
+; state.stop     ; 1          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0           ; 1           ;
++----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |audiotestunits|codecsetup1:U_7|\fsm_state_transition:state                                                                                                                                                                                                                                                                                                                                         ;
++--------------------------------------------+----------------------------------+---------------------------------------+-------------------------------------------+--------------------------------------------+-------------------------------------+-----------------------------------------+-------------------------------------+-------------------------------------------+----------------------------------+
+; Name                                       ; \fsm_state_transition:state.DONE ; \fsm_state_transition:state.ENABLEDAC ; \fsm_state_transition:state.ENABLEDIGCORE ; \fsm_state_transition:state.WAITFORVMIDCAP ; \fsm_state_transition:state.WRITING ; \fsm_state_transition:state.WRITINGINIT ; \fsm_state_transition:state.POWERUP ; \fsm_state_transition:state.RESETCHIPWAIT ; \fsm_state_transition:state.INIT ;
++--------------------------------------------+----------------------------------+---------------------------------------+-------------------------------------------+--------------------------------------------+-------------------------------------+-----------------------------------------+-------------------------------------+-------------------------------------------+----------------------------------+
+; \fsm_state_transition:state.INIT           ; 0                                ; 0                                     ; 0                                         ; 0                                          ; 0                                   ; 0                                       ; 0                                   ; 0                                         ; 0                                ;
+; \fsm_state_transition:state.RESETCHIPWAIT  ; 0                                ; 0                                     ; 0                                         ; 0                                          ; 0                                   ; 0                                       ; 0                                   ; 1                                         ; 1                                ;
+; \fsm_state_transition:state.POWERUP        ; 0                                ; 0                                     ; 0                                         ; 0                                          ; 0                                   ; 0                                       ; 1                                   ; 0                                         ; 1                                ;
+; \fsm_state_transition:state.WRITINGINIT    ; 0                                ; 0                                     ; 0                                         ; 0                                          ; 0                                   ; 1                                       ; 0                                   ; 0                                         ; 1                                ;
+; \fsm_state_transition:state.WRITING        ; 0                                ; 0                                     ; 0                                         ; 0                                          ; 1                                   ; 0                                       ; 0                                   ; 0                                         ; 1                                ;
+; \fsm_state_transition:state.WAITFORVMIDCAP ; 0                                ; 0                                     ; 0                                         ; 1                                          ; 0                                   ; 0                                       ; 0                                   ; 0                                         ; 1                                ;
+; \fsm_state_transition:state.ENABLEDIGCORE  ; 0                                ; 0                                     ; 1                                         ; 0                                          ; 0                                   ; 0                                       ; 0                                   ; 0                                         ; 1                                ;
+; \fsm_state_transition:state.ENABLEDAC      ; 0                                ; 1                                     ; 0                                         ; 0                                          ; 0                                   ; 0                                       ; 0                                   ; 0                                         ; 1                                ;
+; \fsm_state_transition:state.DONE           ; 1                                ; 0                                     ; 0                                         ; 0                                          ; 0                                   ; 0                                       ; 0                                   ; 0                                         ; 1                                ;
++--------------------------------------------+----------------------------------+---------------------------------------+-------------------------------------------+--------------------------------------------+-------------------------------------+-----------------------------------------+-------------------------------------+-------------------------------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |audiotestunits|SSM2603regwriter:U_2|\fsm_state_transition:state                                                                                                                                                                                                                                                                        ;
++------------------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+------------------------------------------+------------------------------------------+-------------------------------------+----------------------------------+
+; Name                                     ; \fsm_state_transition:state.DONE4 ; \fsm_state_transition:state.DONE3 ; \fsm_state_transition:state.DONE2 ; \fsm_state_transition:state.DONE1 ; \fsm_state_transition:state.WRITINGBYTE2 ; \fsm_state_transition:state.WRITINGBYTE1 ; \fsm_state_transition:state.WAITI2C ; \fsm_state_transition:state.IDLE ;
++------------------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+------------------------------------------+------------------------------------------+-------------------------------------+----------------------------------+
+; \fsm_state_transition:state.IDLE         ; 0                                 ; 0                                 ; 0                                 ; 0                                 ; 0                                        ; 0                                        ; 0                                   ; 0                                ;
+; \fsm_state_transition:state.WAITI2C      ; 0                                 ; 0                                 ; 0                                 ; 0                                 ; 0                                        ; 0                                        ; 1                                   ; 1                                ;
+; \fsm_state_transition:state.WRITINGBYTE1 ; 0                                 ; 0                                 ; 0                                 ; 0                                 ; 0                                        ; 1                                        ; 0                                   ; 1                                ;
+; \fsm_state_transition:state.WRITINGBYTE2 ; 0                                 ; 0                                 ; 0                                 ; 0                                 ; 1                                        ; 0                                        ; 0                                   ; 1                                ;
+; \fsm_state_transition:state.DONE1        ; 0                                 ; 0                                 ; 0                                 ; 1                                 ; 0                                        ; 0                                        ; 0                                   ; 1                                ;
+; \fsm_state_transition:state.DONE2        ; 0                                 ; 0                                 ; 1                                 ; 0                                 ; 0                                        ; 0                                        ; 0                                   ; 1                                ;
+; \fsm_state_transition:state.DONE3        ; 0                                 ; 1                                 ; 0                                 ; 0                                 ; 0                                        ; 0                                        ; 0                                   ; 1                                ;
+; \fsm_state_transition:state.DONE4        ; 1                                 ; 0                                 ; 0                                 ; 0                                 ; 0                                        ; 0                                        ; 0                                   ; 1                                ;
++------------------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+------------------------------------------+------------------------------------------+-------------------------------------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                              ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal               ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+; SSM2603regwriter:U_2|writedone                      ; SSM2603regwriter:U_2|WideOr3      ; yes                    ;
+; SSM2603regwriter:U_2|I2Ctransfreq                   ; SSM2603regwriter:U_2|WideOr2      ; yes                    ;
+; codecsetup1:U_7|ready                               ; codecsetup1:U_7|WideOr3           ; yes                    ;
+; SSM2603regwriter:U_2|data_wr[5]                     ; SSM2603regwriter:U_2|I2Ctransfreq ; yes                    ;
+; SSM2603regwriter:U_2|data_wr[7]                     ; SSM2603regwriter:U_2|I2Ctransfreq ; yes                    ;
+; SSM2603regwriter:U_2|data_wr[4]                     ; SSM2603regwriter:U_2|I2Ctransfreq ; yes                    ;
+; SSM2603regwriter:U_2|data_wr[6]                     ; SSM2603regwriter:U_2|I2Ctransfreq ; yes                    ;
+; SSM2603regwriter:U_2|data_wr[1]                     ; SSM2603regwriter:U_2|I2Ctransfreq ; yes                    ;
+; SSM2603regwriter:U_2|data_wr[3]                     ; SSM2603regwriter:U_2|I2Ctransfreq ; yes                    ;
+; SSM2603regwriter:U_2|data_wr[0]                     ; SSM2603regwriter:U_2|I2Ctransfreq ; yes                    ;
+; SSM2603regwriter:U_2|data_wr[2]                     ; SSM2603regwriter:U_2|I2Ctransfreq ; yes                    ;
+; Number of user-specified and inferred latches = 11  ;                                   ;                        ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; codecsetup1:U_7|regdata[5]                             ;   ;
+; codecsetup1:U_7|regdata[7]                             ;   ;
+; codecsetup1:U_7|regdata[4]                             ;   ;
+; codecsetup1:U_7|regdata[6]                             ;   ;
+; codecsetup1:U_7|regdata[1]                             ;   ;
+; codecsetup1:U_7|regdata[3]                             ;   ;
+; codecsetup1:U_7|regdata[8]                             ;   ;
+; codecsetup1:U_7|regdata[0]                             ;   ;
+; codecsetup1:U_7|regdata[2]                             ;   ;
+; Number of logic cells representing combinational loops ; 9 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                     ;
++------------------------------------------------------+-----------------------------------------------------------------+
+; Register name                                        ; Reason for Removal                                              ;
++------------------------------------------------------+-----------------------------------------------------------------+
+; i2c_master:U_0|addr_rw[1,3,6,7]                      ; Merged with i2c_master:U_0|addr_rw[0]                           ;
+; i2c_master:U_0|addr_rw[4,5]                          ; Merged with i2c_master:U_0|addr_rw[2]                           ;
+; SSM2603regwriter:U_2|\generate_enable_pulse:lastbusy ; Merged with SSM2603regwriter:U_2|\fsm_state_transition:lastbusy ;
+; i2c_master:U_0|addr_rw[0]                            ; Stuck at GND due to stuck port data_in                          ;
+; i2c_master:U_0|addr_rw[2]                            ; Stuck at VCC due to stuck port data_in                          ;
+; codecsetup1:U_7|regaddr[4]                           ; Stuck at GND due to stuck port data_in                          ;
+; i2c_master:U_0|data_tx[7]                            ; Stuck at GND due to stuck port data_in                          ;
+; Total Number of Removed Registers = 11               ;                                                                 ;
++------------------------------------------------------+-----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 216   ;
+; Number of registers using Synchronous Clear  ; 124   ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 187   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 151   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------+
+; Inverted Register Statistics                                          ;
++-------------------------------------------------------------+---------+
+; Inverted Register                                           ; Fan out ;
++-------------------------------------------------------------+---------+
+; codecsetup1:U_7|regaddr[2]                                  ; 13      ;
+; codecsetup1:U_7|regaddr[1]                                  ; 12      ;
+; i2c_master:U_0|bit_cnt[2]                                   ; 9       ;
+; i2c_master:U_0|bit_cnt[1]                                   ; 10      ;
+; i2c_master:U_0|bit_cnt[0]                                   ; 9       ;
+; i2c_master:U_0|sda_int                                      ; 2       ;
+; i2c_master:U_0|busy                                         ; 7       ;
+; SSM2603regwriter:U_2|\fsm_state_transition:waitforI2Cctr[0] ; 3       ;
+; Total number of inverted registers = 8                      ;         ;
++-------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |audiotestunits|i2c_master:U_0|data_tx[4]                                   ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |audiotestunits|i2s_transceiver:U_1|l_data_tx_int[7]                        ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |audiotestunits|i2s_transceiver:U_1|r_data_tx_int[6]                        ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 0 LEs                ; 27 LEs                 ; Yes        ; |audiotestunits|SSM2603regwriter:U_2|\fsm_state_transition:waitforI2Cctr[1] ;
+; 8:1                ; 21 bits   ; 105 LEs       ; 0 LEs                ; 105 LEs                ; Yes        ; |audiotestunits|codecsetup1:U_7|\fsm_state_transition:waitctr[17]           ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |audiotestunits|codecsetup1:U_7|regaddr[3]                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |audiotestunits|i2c_master:U_0|bit_cnt[0]                                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |audiotestunits|codecsetup1:U_7|regaddr[1]                                  ;
+; 32:1               ; 6 bits    ; 126 LEs       ; 24 LEs               ; 102 LEs                ; No         ; |audiotestunits|codecsetup1:U_7|Mux36                                       ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |audiotestunits|SSM2603regwriter:U_2|Selector5                              ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |audiotestunits|codecsetup1:U_7|state                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: i2c_master:U_0 ;
++----------------+----------+---------------------------------+
+; Parameter Name ; Value    ; Type                            ;
++----------------+----------+---------------------------------+
+; input_clk      ; 50000000 ; Signed Integer                  ;
+; bus_clk        ; 10000    ; Signed Integer                  ;
++----------------+----------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: i2s_transceiver:U_1 ;
++-----------------+-------+----------------------------------------+
+; Parameter Name  ; Value ; Type                                   ;
++-----------------+-------+----------------------------------------+
+; mclk_sclk_ratio ; 4     ; Signed Integer                         ;
+; sclk_ws_ratio   ; 64    ; Signed Integer                         ;
+; d_width         ; 16    ; Signed Integer                         ;
++-----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i ;
++--------------------------------------+------------------------+-----------------------------------------------------+
+; Parameter Name                       ; Value                  ; Type                                                ;
++--------------------------------------+------------------------+-----------------------------------------------------+
+; reference_clock_frequency            ; 50.0 MHz               ; String                                              ;
+; fractional_vco_multiplier            ; false                  ; String                                              ;
+; pll_type                             ; General                ; String                                              ;
+; pll_subtype                          ; General                ; String                                              ;
+; number_of_clocks                     ; 1                      ; Signed Integer                                      ;
+; operation_mode                       ; direct                 ; String                                              ;
+; deserialization_factor               ; 4                      ; Signed Integer                                      ;
+; data_rate                            ; 0                      ; Signed Integer                                      ;
+; sim_additional_refclk_cycles_to_lock ; 0                      ; Signed Integer                                      ;
+; output_clock_frequency0              ; 12.000000 MHz          ; String                                              ;
+; phase_shift0                         ; 0 ps                   ; String                                              ;
+; duty_cycle0                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency1              ; 0 MHz                  ; String                                              ;
+; phase_shift1                         ; 0 ps                   ; String                                              ;
+; duty_cycle1                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency2              ; 0 MHz                  ; String                                              ;
+; phase_shift2                         ; 0 ps                   ; String                                              ;
+; duty_cycle2                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency3              ; 0 MHz                  ; String                                              ;
+; phase_shift3                         ; 0 ps                   ; String                                              ;
+; duty_cycle3                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency4              ; 0 MHz                  ; String                                              ;
+; phase_shift4                         ; 0 ps                   ; String                                              ;
+; duty_cycle4                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency5              ; 0 MHz                  ; String                                              ;
+; phase_shift5                         ; 0 ps                   ; String                                              ;
+; duty_cycle5                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency6              ; 0 MHz                  ; String                                              ;
+; phase_shift6                         ; 0 ps                   ; String                                              ;
+; duty_cycle6                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency7              ; 0 MHz                  ; String                                              ;
+; phase_shift7                         ; 0 ps                   ; String                                              ;
+; duty_cycle7                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency8              ; 0 MHz                  ; String                                              ;
+; phase_shift8                         ; 0 ps                   ; String                                              ;
+; duty_cycle8                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency9              ; 0 MHz                  ; String                                              ;
+; phase_shift9                         ; 0 ps                   ; String                                              ;
+; duty_cycle9                          ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency10             ; 0 MHz                  ; String                                              ;
+; phase_shift10                        ; 0 ps                   ; String                                              ;
+; duty_cycle10                         ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency11             ; 0 MHz                  ; String                                              ;
+; phase_shift11                        ; 0 ps                   ; String                                              ;
+; duty_cycle11                         ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency12             ; 0 MHz                  ; String                                              ;
+; phase_shift12                        ; 0 ps                   ; String                                              ;
+; duty_cycle12                         ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency13             ; 0 MHz                  ; String                                              ;
+; phase_shift13                        ; 0 ps                   ; String                                              ;
+; duty_cycle13                         ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency14             ; 0 MHz                  ; String                                              ;
+; phase_shift14                        ; 0 ps                   ; String                                              ;
+; duty_cycle14                         ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency15             ; 0 MHz                  ; String                                              ;
+; phase_shift15                        ; 0 ps                   ; String                                              ;
+; duty_cycle15                         ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency16             ; 0 MHz                  ; String                                              ;
+; phase_shift16                        ; 0 ps                   ; String                                              ;
+; duty_cycle16                         ; 50                     ; Signed Integer                                      ;
+; output_clock_frequency17             ; 0 MHz                  ; String                                              ;
+; phase_shift17                        ; 0 ps                   ; String                                              ;
+; duty_cycle17                         ; 50                     ; Signed Integer                                      ;
+; clock_name_0                         ;                        ; String                                              ;
+; clock_name_1                         ;                        ; String                                              ;
+; clock_name_2                         ;                        ; String                                              ;
+; clock_name_3                         ;                        ; String                                              ;
+; clock_name_4                         ;                        ; String                                              ;
+; clock_name_5                         ;                        ; String                                              ;
+; clock_name_6                         ;                        ; String                                              ;
+; clock_name_7                         ;                        ; String                                              ;
+; clock_name_8                         ;                        ; String                                              ;
+; clock_name_global_0                  ; false                  ; String                                              ;
+; clock_name_global_1                  ; false                  ; String                                              ;
+; clock_name_global_2                  ; false                  ; String                                              ;
+; clock_name_global_3                  ; false                  ; String                                              ;
+; clock_name_global_4                  ; false                  ; String                                              ;
+; clock_name_global_5                  ; false                  ; String                                              ;
+; clock_name_global_6                  ; false                  ; String                                              ;
+; clock_name_global_7                  ; false                  ; String                                              ;
+; clock_name_global_8                  ; false                  ; String                                              ;
+; m_cnt_hi_div                         ; 1                      ; Signed Integer                                      ;
+; m_cnt_lo_div                         ; 1                      ; Signed Integer                                      ;
+; m_cnt_bypass_en                      ; false                  ; String                                              ;
+; m_cnt_odd_div_duty_en                ; false                  ; String                                              ;
+; n_cnt_hi_div                         ; 1                      ; Signed Integer                                      ;
+; n_cnt_lo_div                         ; 1                      ; Signed Integer                                      ;
+; n_cnt_bypass_en                      ; false                  ; String                                              ;
+; n_cnt_odd_div_duty_en                ; false                  ; String                                              ;
+; c_cnt_hi_div0                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div0                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en0                     ; false                  ; String                                              ;
+; c_cnt_in_src0                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en0               ; false                  ; String                                              ;
+; c_cnt_prst0                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst0                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div1                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div1                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en1                     ; false                  ; String                                              ;
+; c_cnt_in_src1                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en1               ; false                  ; String                                              ;
+; c_cnt_prst1                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst1                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div2                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div2                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en2                     ; false                  ; String                                              ;
+; c_cnt_in_src2                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en2               ; false                  ; String                                              ;
+; c_cnt_prst2                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst2                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div3                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div3                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en3                     ; false                  ; String                                              ;
+; c_cnt_in_src3                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en3               ; false                  ; String                                              ;
+; c_cnt_prst3                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst3                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div4                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div4                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en4                     ; false                  ; String                                              ;
+; c_cnt_in_src4                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en4               ; false                  ; String                                              ;
+; c_cnt_prst4                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst4                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div5                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div5                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en5                     ; false                  ; String                                              ;
+; c_cnt_in_src5                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en5               ; false                  ; String                                              ;
+; c_cnt_prst5                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst5                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div6                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div6                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en6                     ; false                  ; String                                              ;
+; c_cnt_in_src6                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en6               ; false                  ; String                                              ;
+; c_cnt_prst6                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst6                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div7                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div7                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en7                     ; false                  ; String                                              ;
+; c_cnt_in_src7                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en7               ; false                  ; String                                              ;
+; c_cnt_prst7                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst7                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div8                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div8                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en8                     ; false                  ; String                                              ;
+; c_cnt_in_src8                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en8               ; false                  ; String                                              ;
+; c_cnt_prst8                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst8                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div9                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div9                        ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en9                     ; false                  ; String                                              ;
+; c_cnt_in_src9                        ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en9               ; false                  ; String                                              ;
+; c_cnt_prst9                          ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst9                   ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div10                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div10                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en10                    ; false                  ; String                                              ;
+; c_cnt_in_src10                       ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en10              ; false                  ; String                                              ;
+; c_cnt_prst10                         ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst10                  ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div11                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div11                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en11                    ; false                  ; String                                              ;
+; c_cnt_in_src11                       ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en11              ; false                  ; String                                              ;
+; c_cnt_prst11                         ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst11                  ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div12                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div12                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en12                    ; false                  ; String                                              ;
+; c_cnt_in_src12                       ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en12              ; false                  ; String                                              ;
+; c_cnt_prst12                         ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst12                  ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div13                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div13                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en13                    ; false                  ; String                                              ;
+; c_cnt_in_src13                       ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en13              ; false                  ; String                                              ;
+; c_cnt_prst13                         ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst13                  ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div14                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div14                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en14                    ; false                  ; String                                              ;
+; c_cnt_in_src14                       ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en14              ; false                  ; String                                              ;
+; c_cnt_prst14                         ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst14                  ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div15                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div15                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en15                    ; false                  ; String                                              ;
+; c_cnt_in_src15                       ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en15              ; false                  ; String                                              ;
+; c_cnt_prst15                         ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst15                  ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div16                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div16                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en16                    ; false                  ; String                                              ;
+; c_cnt_in_src16                       ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en16              ; false                  ; String                                              ;
+; c_cnt_prst16                         ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst16                  ; 0                      ; Signed Integer                                      ;
+; c_cnt_hi_div17                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_lo_div17                       ; 1                      ; Signed Integer                                      ;
+; c_cnt_bypass_en17                    ; false                  ; String                                              ;
+; c_cnt_in_src17                       ; ph_mux_clk             ; String                                              ;
+; c_cnt_odd_div_duty_en17              ; false                  ; String                                              ;
+; c_cnt_prst17                         ; 1                      ; Signed Integer                                      ;
+; c_cnt_ph_mux_prst17                  ; 0                      ; Signed Integer                                      ;
+; pll_vco_div                          ; 1                      ; Signed Integer                                      ;
+; pll_slf_rst                          ; false                  ; String                                              ;
+; pll_bw_sel                           ; low                    ; String                                              ;
+; pll_output_clk_frequency             ; 0 MHz                  ; String                                              ;
+; pll_cp_current                       ; 0                      ; Signed Integer                                      ;
+; pll_bwctrl                           ; 0                      ; Signed Integer                                      ;
+; pll_fractional_division              ; 1                      ; Signed Integer                                      ;
+; pll_fractional_cout                  ; 24                     ; Signed Integer                                      ;
+; pll_dsm_out_sel                      ; 1st_order              ; String                                              ;
+; mimic_fbclk_type                     ; gclk                   ; String                                              ;
+; pll_fbclk_mux_1                      ; glb                    ; String                                              ;
+; pll_fbclk_mux_2                      ; fb_1                   ; String                                              ;
+; pll_m_cnt_in_src                     ; ph_mux_clk             ; String                                              ;
+; pll_vcoph_div                        ; 1                      ; Signed Integer                                      ;
+; refclk1_frequency                    ; 0 MHz                  ; String                                              ;
+; pll_clkin_0_src                      ; clk_0                  ; String                                              ;
+; pll_clkin_1_src                      ; clk_0                  ; String                                              ;
+; pll_clk_loss_sw_en                   ; false                  ; String                                              ;
+; pll_auto_clk_sw_en                   ; false                  ; String                                              ;
+; pll_manu_clk_sw_en                   ; false                  ; String                                              ;
+; pll_clk_sw_dly                       ; 0                      ; Signed Integer                                      ;
+; pll_extclk_0_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                              ;
+; pll_extclk_1_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                              ;
++--------------------------------------+------------------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: taktteiler:U_4 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; max            ; 3     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "i2s_transceiver:U_1"                                                                     ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; sd_rx     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; l_data_rx ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; r_data_rx ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "i2c_master:U_0"                                                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; data_rd ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 216                         ;
+;     CLR               ; 20                          ;
+;     CLR SCLR          ; 45                          ;
+;     ENA               ; 12                          ;
+;     ENA CLR           ; 30                          ;
+;     ENA CLR SCLR      ; 62                          ;
+;     ENA CLR SLD       ; 30                          ;
+;     ENA SCLR          ; 17                          ;
+; arriav_io_obuf        ; 2                           ;
+; arriav_lcell_comb     ; 303                         ;
+;     arith             ; 125                         ;
+;         1 data inputs ; 124                         ;
+;         2 data inputs ; 1                           ;
+;     extend            ; 4                           ;
+;         7 data inputs ; 4                           ;
+;     normal            ; 174                         ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 29                          ;
+;         4 data inputs ; 33                          ;
+;         5 data inputs ; 52                          ;
+;         6 data inputs ; 26                          ;
+; boundary_port         ; 18                          ;
+; generic_pll           ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 6.90                        ;
+; Average LUT depth     ; 3.47                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Mon Dec 18 16:56:20 2023
+Info: Command: quartus_map audiotestunits --optimize=area --state_machine_encoding=auto --enable_register_retiming=off --enable_wysiwyg_resynthesis=off --ignore_carry_buffers=off --ignore_cascade_buffers=off --write_settings_files=on --family="cyclone v" --part=5cgxfc5c6f27c7
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_entity.vhd
+    Info (12023): Found entity 1: audiotestunits File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_entity.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/i2c_master.vhd
+    Info (12022): Found design unit 1: i2c_master-logic File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/i2c_master.vhd Line: 54
+    Info (12023): Found entity 1: i2c_master File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/i2c_master.vhd Line: 36
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/i2s_transceiver_logic.vhd
+    Info (12022): Found design unit 1: i2s_transceiver-logic File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/i2s_transceiver_logic.vhd Line: 36
+    Info (12023): Found entity 1: i2s_transceiver File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/i2s_transceiver_logic.vhd Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/ssm2603regwriter_entity.vhd
+    Info (12023): Found entity 1: SSM2603regwriter File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/ssm2603regwriter_entity.vhd Line: 18
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd
+    Info (12022): Found design unit 1: SSM2603regwriter-behav File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_entity.vhd
+    Info (12023): Found entity 1: testsoundctrl1 File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_entity.vhd Line: 18
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd
+    Info (12022): Found design unit 1: testsoundctrl1-behav File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/taktteiler_entity.vhd
+    Info (12023): Found entity 1: taktteiler File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/taktteiler_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/taktteiler_behav.vhd
+    Info (12022): Found design unit 1: taktteiler-behav File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/taktteiler_behav.vhd Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new/pll5012new_0002.v
+    Info (12023): Found entity 1: pll5012new_0002 File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new/pll5012new_0002.v Line: 2
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new.vhd
+    Info (12022): Found design unit 1: pll5012new-rtl File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new.vhd Line: 19
+    Info (12023): Found entity 1: pll5012new File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_entity.vhd
+    Info (12023): Found entity 1: codecsetup1 File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_entity.vhd Line: 18
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd
+    Info (12022): Found design unit 1: codecsetup1-behav File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd
+    Info (12022): Found design unit 1: audiotestunits-struct File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd Line: 21
+Info (12127): Elaborating entity "audiotestunits" for the top level hierarchy
+Info (12128): Elaborating entity "SSM2603regwriter" for hierarchy "SSM2603regwriter:U_2" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd Line: 177
+Warning (10036): Verilog HDL or VHDL warning at SSM2603regwriter_behav.vhd(19): object "lastsetreg" assigned a value but never read File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(78): signal "regaddr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(78): signal "regdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(81): signal "regdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(67): inferring latch(es) for signal or variable "I2Ctransfreq", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(67): inferring latch(es) for signal or variable "writedone", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(67): inferring latch(es) for signal or variable "data_wr", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[0]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[1]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[2]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[3]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[4]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[5]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[6]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[7]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "writedone" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "I2Ctransfreq" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (12128): Elaborating entity "codecsetup1" for hierarchy "codecsetup1:U_7" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd Line: 191
+Warning (10492): VHDL Process Statement warning at codecsetup1_behav.vhd(140): signal "leftadcvol" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 140
+Warning (10492): VHDL Process Statement warning at codecsetup1_behav.vhd(141): signal "rightadcvol" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 141
+Warning (10492): VHDL Process Statement warning at codecsetup1_behav.vhd(142): signal "leftdacvol" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at codecsetup1_behav.vhd(143): signal "rightdacvol" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 143
+Warning (10631): VHDL Process Statement warning at codecsetup1_behav.vhd(122): inferring latch(es) for signal or variable "ready", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 122
+Warning (10631): VHDL Process Statement warning at codecsetup1_behav.vhd(122): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 122
+Info (10041): Inferred latch for "ready" at codecsetup1_behav.vhd(122) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 122
+Info (12128): Elaborating entity "i2c_master" for hierarchy "i2c_master:U_0" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd Line: 207
+Info (12128): Elaborating entity "i2s_transceiver" for hierarchy "i2s_transceiver:U_1" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd Line: 225
+Info (12128): Elaborating entity "pll5012new" for hierarchy "pll5012new:U_5" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd Line: 243
+Info (12128): Elaborating entity "pll5012new_0002" for hierarchy "pll5012new:U_5|pll5012new_0002:pll5012new_inst" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new.vhd Line: 31
+Info (12128): Elaborating entity "altera_pll" for hierarchy "pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new/pll5012new_0002.v Line: 85
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
+Info (12130): Elaborated megafunction instantiation "pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new/pll5012new_0002.v Line: 85
+Info (12133): Instantiated megafunction "pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i" with the following parameter: File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new/pll5012new_0002.v Line: 85
+    Info (12134): Parameter "fractional_vco_multiplier" = "false"
+    Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
+    Info (12134): Parameter "operation_mode" = "direct"
+    Info (12134): Parameter "number_of_clocks" = "1"
+    Info (12134): Parameter "output_clock_frequency0" = "12.000000 MHz"
+    Info (12134): Parameter "phase_shift0" = "0 ps"
+    Info (12134): Parameter "duty_cycle0" = "50"
+    Info (12134): Parameter "output_clock_frequency1" = "0 MHz"
+    Info (12134): Parameter "phase_shift1" = "0 ps"
+    Info (12134): Parameter "duty_cycle1" = "50"
+    Info (12134): Parameter "output_clock_frequency2" = "0 MHz"
+    Info (12134): Parameter "phase_shift2" = "0 ps"
+    Info (12134): Parameter "duty_cycle2" = "50"
+    Info (12134): Parameter "output_clock_frequency3" = "0 MHz"
+    Info (12134): Parameter "phase_shift3" = "0 ps"
+    Info (12134): Parameter "duty_cycle3" = "50"
+    Info (12134): Parameter "output_clock_frequency4" = "0 MHz"
+    Info (12134): Parameter "phase_shift4" = "0 ps"
+    Info (12134): Parameter "duty_cycle4" = "50"
+    Info (12134): Parameter "output_clock_frequency5" = "0 MHz"
+    Info (12134): Parameter "phase_shift5" = "0 ps"
+    Info (12134): Parameter "duty_cycle5" = "50"
+    Info (12134): Parameter "output_clock_frequency6" = "0 MHz"
+    Info (12134): Parameter "phase_shift6" = "0 ps"
+    Info (12134): Parameter "duty_cycle6" = "50"
+    Info (12134): Parameter "output_clock_frequency7" = "0 MHz"
+    Info (12134): Parameter "phase_shift7" = "0 ps"
+    Info (12134): Parameter "duty_cycle7" = "50"
+    Info (12134): Parameter "output_clock_frequency8" = "0 MHz"
+    Info (12134): Parameter "phase_shift8" = "0 ps"
+    Info (12134): Parameter "duty_cycle8" = "50"
+    Info (12134): Parameter "output_clock_frequency9" = "0 MHz"
+    Info (12134): Parameter "phase_shift9" = "0 ps"
+    Info (12134): Parameter "duty_cycle9" = "50"
+    Info (12134): Parameter "output_clock_frequency10" = "0 MHz"
+    Info (12134): Parameter "phase_shift10" = "0 ps"
+    Info (12134): Parameter "duty_cycle10" = "50"
+    Info (12134): Parameter "output_clock_frequency11" = "0 MHz"
+    Info (12134): Parameter "phase_shift11" = "0 ps"
+    Info (12134): Parameter "duty_cycle11" = "50"
+    Info (12134): Parameter "output_clock_frequency12" = "0 MHz"
+    Info (12134): Parameter "phase_shift12" = "0 ps"
+    Info (12134): Parameter "duty_cycle12" = "50"
+    Info (12134): Parameter "output_clock_frequency13" = "0 MHz"
+    Info (12134): Parameter "phase_shift13" = "0 ps"
+    Info (12134): Parameter "duty_cycle13" = "50"
+    Info (12134): Parameter "output_clock_frequency14" = "0 MHz"
+    Info (12134): Parameter "phase_shift14" = "0 ps"
+    Info (12134): Parameter "duty_cycle14" = "50"
+    Info (12134): Parameter "output_clock_frequency15" = "0 MHz"
+    Info (12134): Parameter "phase_shift15" = "0 ps"
+    Info (12134): Parameter "duty_cycle15" = "50"
+    Info (12134): Parameter "output_clock_frequency16" = "0 MHz"
+    Info (12134): Parameter "phase_shift16" = "0 ps"
+    Info (12134): Parameter "duty_cycle16" = "50"
+    Info (12134): Parameter "output_clock_frequency17" = "0 MHz"
+    Info (12134): Parameter "phase_shift17" = "0 ps"
+    Info (12134): Parameter "duty_cycle17" = "50"
+    Info (12134): Parameter "pll_type" = "General"
+    Info (12134): Parameter "pll_subtype" = "General"
+Info (12128): Elaborating entity "taktteiler" for hierarchy "taktteiler:U_4" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd Line: 249
+Info (12128): Elaborating entity "testsoundctrl1" for hierarchy "testsoundctrl1:U_3" File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/audiotestunits_struct.vhd Line: 258
+Warning (10631): VHDL Process Statement warning at testsoundctrl1_behav.vhd(12): inferring latch(es) for signal or variable "leftadcvol", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Warning (10631): VHDL Process Statement warning at testsoundctrl1_behav.vhd(12): inferring latch(es) for signal or variable "rightadcvol", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Warning (10631): VHDL Process Statement warning at testsoundctrl1_behav.vhd(12): inferring latch(es) for signal or variable "leftdacvol", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Warning (10631): VHDL Process Statement warning at testsoundctrl1_behav.vhd(12): inferring latch(es) for signal or variable "rightdacvol", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Warning (10631): VHDL Process Statement warning at testsoundctrl1_behav.vhd(12): inferring latch(es) for signal or variable "update", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "update" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightdacvol[0]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightdacvol[1]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightdacvol[2]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightdacvol[3]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightdacvol[4]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightdacvol[5]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightdacvol[6]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftdacvol[0]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftdacvol[1]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftdacvol[2]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftdacvol[3]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftdacvol[4]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftdacvol[5]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftdacvol[6]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightadcvol[0]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightadcvol[1]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightadcvol[2]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightadcvol[3]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightadcvol[4]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "rightadcvol[5]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftadcvol[0]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftadcvol[1]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftadcvol[2]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftadcvol[3]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftadcvol[4]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Info (10041): Inferred latch for "leftadcvol[5]" at testsoundctrl1_behav.vhd(12) File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/testsoundctrl1_behav.vhd Line: 12
+Warning (13012): Latch SSM2603regwriter:U_2|writedone has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/ssm2603regwriter_entity.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WAITI2C
+Warning (13012): Latch codecsetup1:U_7|ready has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_entity.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal codecsetup1:U_7|\fsm_state_transition:state.DONE
+Warning (13012): Latch SSM2603regwriter:U_2|data_wr[5] has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE2
+Warning (13012): Latch SSM2603regwriter:U_2|data_wr[7] has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE2
+Warning (13012): Latch SSM2603regwriter:U_2|data_wr[4] has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE2
+Warning (13012): Latch SSM2603regwriter:U_2|data_wr[6] has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE2
+Warning (13012): Latch SSM2603regwriter:U_2|data_wr[1] has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE2
+Warning (13012): Latch SSM2603regwriter:U_2|data_wr[3] has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE2
+Warning (13012): Latch SSM2603regwriter:U_2|data_wr[0] has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE2
+Warning (13012): Latch SSM2603regwriter:U_2|data_wr[2] has unsafe behavior File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE2
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register codecsetup1:U_7|regaddr[2] will power up to High File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 53
+    Critical Warning (18010): Register codecsetup1:U_7|regaddr[1] will power up to High File: /u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/codecsetup1_behav.vhd Line: 53
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 416 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 397 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 554 megabytes
+    Info: Processing ended: Mon Dec 18 16:56:26 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:12
+
+

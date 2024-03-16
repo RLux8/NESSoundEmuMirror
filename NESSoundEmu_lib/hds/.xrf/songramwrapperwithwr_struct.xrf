@@ -1,0 +1,101 @@
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 0
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 41,0 9 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 12
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 0,0 14 2 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 291,0 19 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 289,0 20 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 295,0 21 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 283,0 22 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 23
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 24
+LIBRARY audiotest_lib
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct
+GRAPHIC 161,0 26 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 241,0 28 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 265,0 29 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 271,0 30 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 259,0 31 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 32
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 125,0 34 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 41
+LIBRARY audiotest_lib
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 43
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 161,0 46 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 125,0 47 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 50
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 109,0 53 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 57
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 58
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 161,0 60 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 125,0 67 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 271,0 69 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 277,0 70 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 247,0 71 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 253,0 72 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+GRAPHIC 265,0 73 0 
+DESIGN song@r@a@mwrapperwithwr
+VIEW struct.bd
+NO_GRAPHIC 76

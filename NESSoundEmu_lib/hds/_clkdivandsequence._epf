@@ -1,0 +1,2 @@
+DEFAULT_FILE atom pulse_behav.vhd
+DEFAULT_ARCHITECTURE atom behav

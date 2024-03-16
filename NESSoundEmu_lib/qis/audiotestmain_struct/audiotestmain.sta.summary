@@ -1,0 +1,309 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : -8.189
+TNS   : -54.916
+
+Type  : Slow 1100mV 85C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : -7.016
+TNS   : -7.016
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -6.956
+TNS   : -163.970
+
+Type  : Slow 1100mV 85C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : -4.196
+TNS   : -4.196
+
+Type  : Slow 1100mV 85C Model Setup 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : -1.694
+TNS   : -1.694
+
+Type  : Slow 1100mV 85C Model Setup 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.094
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : -1.952
+TNS   : -1.952
+
+Type  : Slow 1100mV 85C Model Hold 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : 0.651
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : 0.965
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : 1.251
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : 3.478
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : 0.192
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : 0.414
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : 9.294
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 40.938
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : -8.414
+TNS   : -55.709
+
+Type  : Slow 1100mV 0C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : -7.008
+TNS   : -7.008
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -6.409
+TNS   : -144.569
+
+Type  : Slow 1100mV 0C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : -4.342
+TNS   : -4.342
+
+Type  : Slow 1100mV 0C Model Setup 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : -1.746
+TNS   : -1.746
+
+Type  : Slow 1100mV 0C Model Setup 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.128
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : -2.105
+TNS   : -2.105
+
+Type  : Slow 1100mV 0C Model Hold 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.240
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : 0.461
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : 1.011
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : 1.168
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : 3.595
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : 0.251
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : 0.369
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : 0.419
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.170
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 40.850
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -4.402
+TNS   : -98.869
+
+Type  : Fast 1100mV 85C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : -3.890
+TNS   : -24.964
+
+Type  : Fast 1100mV 85C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : -3.210
+TNS   : -3.210
+
+Type  : Fast 1100mV 85C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : -1.594
+TNS   : -1.594
+
+Type  : Fast 1100mV 85C Model Setup 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : -0.431
+TNS   : -0.431
+
+Type  : Fast 1100mV 85C Model Setup 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 1.590
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : -0.581
+TNS   : -0.581
+
+Type  : Fast 1100mV 85C Model Hold 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : 0.522
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : 0.555
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : 0.728
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : 1.813
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : 0.477
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : 9.386
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 41.231
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -3.662
+TNS   : -74.301
+
+Type  : Fast 1100mV 0C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : -3.608
+TNS   : -23.327
+
+Type  : Fast 1100mV 0C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : -2.877
+TNS   : -2.877
+
+Type  : Fast 1100mV 0C Model Setup 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : -1.550
+TNS   : -1.550
+
+Type  : Fast 1100mV 0C Model Setup 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : -0.382
+TNS   : -0.382
+
+Type  : Fast 1100mV 0C Model Setup 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 1.723
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : -0.610
+TNS   : -0.610
+
+Type  : Fast 1100mV 0C Model Hold 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : 0.506
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : 0.650
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : 1.810
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.WRITINGBYTE1'
+Slack : 0.370
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'codecsetup:U_7|\fsm_state_transition:state.DONE'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE1'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SSM2603regwriter:U_2|\fsm_state_transition:state.DONE2'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.386
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'U_5|pll5012new_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 41.222
+TNS   : 0.000
+
+------------------------------------------------------------

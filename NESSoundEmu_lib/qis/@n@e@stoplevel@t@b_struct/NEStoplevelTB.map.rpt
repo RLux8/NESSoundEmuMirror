@@ -1,0 +1,751 @@
+Analysis & Synthesis report for NEStoplevelTB
+Mon Feb  5 10:42:51 2024
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++-----------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Mon Feb  5 10:42:51 2024               ;
+; Quartus Prime Version       ; 21.1.1 Build 850 06/23/2022 SJ Standard Edition ;
+; Revision Name               ; NEStoplevelTB                                   ;
+; Top-level Entity Name       ; NEStoplevelTB                                   ;
+; Family                      ; Cyclone V                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
+; Total registers             ; N/A until Partition Merge                       ;
+; Total pins                  ; N/A until Partition Merge                       ;
+; Total virtual pins          ; N/A until Partition Merge                       ;
+; Total block memory bits     ; N/A until Partition Merge                       ;
+; Total PLLs                  ; N/A until Partition Merge                       ;
+; Total DLLs                  ; N/A until Partition Merge                       ;
++-----------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5cgxfc5c6f27c7     ;                    ;
+; Top-level entity name                                                           ; NEStoplevelTB      ; NEStoplevelTB      ;
+; Family name                                                                     ; cyclone v          ; Cyclone V          ;
+; Optimization Technique                                                          ; Area               ; Balanced           ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Mon Feb  5 10:42:45 2024
+Info: Command: quartus_map NEStoplevelTB --optimize=area --state_machine_encoding=auto --enable_register_retiming=off --enable_wysiwyg_resynthesis=off --ignore_carry_buffers=off --ignore_cascade_buffers=off --write_settings_files=on --family="cyclone v" --part=5cgxfc5c6f27c7
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nestopleveltb_entity.vhd
+    Info (12023): Found entity 1: NEStoplevelTB File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nestopleveltb_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_entity.vhd
+    Info (12023): Found entity 1: NESPlayertoplevel File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_entity.vhd Line: 12
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/booleanvectors_pkg.vhd
+    Info (12022): Found design unit 1: booleanvectors File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/booleanvectors_pkg.vhd Line: 14
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/booleanvectors_pkg_body.vhd
+    Info (12022): Found design unit 1: booleanvectors-body File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/booleanvectors_pkg_body.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_entity.vhd
+    Info (12023): Found entity 1: toplevelcontrol File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd
+    Info (12022): Found design unit 1: toplevelcontrol-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/i2c_master.vhd
+    Info (12022): Found design unit 1: i2c_master-logic File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/i2c_master.vhd Line: 54
+    Info (12023): Found entity 1: i2c_master File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/i2c_master.vhd Line: 36
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/i2s_transceiver_logic.vhd
+    Info (12022): Found design unit 1: i2s_transceiver-logic File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/i2s_transceiver_logic.vhd Line: 36
+    Info (12023): Found entity 1: i2s_transceiver File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/i2s_transceiver_logic.vhd Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/ssm2603regwriter_entity.vhd
+    Info (12023): Found entity 1: SSM2603regwriter File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/ssm2603regwriter_entity.vhd Line: 18
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd
+    Info (12022): Found design unit 1: SSM2603regwriter-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new/pll5012new_0002.v
+    Info (12023): Found entity 1: pll5012new_0002 File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new/pll5012new_0002.v Line: 2
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new.vhd
+    Info (12022): Found design unit 1: pll5012new-rtl File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new.vhd Line: 19
+    Info (12023): Found entity 1: pll5012new File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup_entity.vhd
+    Info (12023): Found entity 1: codecsetup File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup_entity.vhd Line: 18
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd
+    Info (12022): Found design unit 1: codecsetup-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_entity.vhd
+    Info (12023): Found entity 1: completeNES File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_entity.vhd Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_entity.vhd
+    Info (12023): Found entity 1: memarbitermx65interface File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_behav.vhd
+    Info (12022): Found design unit 1: memarbitermx65interface-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_behav.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd
+    Info (12022): Found design unit 1: mx65withtick-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 30
+    Info (12023): Found entity 1: mx65withtick File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_entity.vhd
+    Info (12023): Found entity 1: apu File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_entity.vhd Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apumixer_entity.vhd
+    Info (12023): Found entity 1: apumixer File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apumixer_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apumixer_behav.vhd
+    Info (12022): Found design unit 1: apumixer-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apumixer_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_entity.vhd
+    Info (12023): Found entity 1: noisechannel File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noiselfsr1_entity.vhd
+    Info (12023): Found entity 1: NoiseLFSR1 File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noiselfsr1_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/NoiseLFSR1_behav.vhd
+    Info (12022): Found design unit 1: NoiseLFSR1-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/NoiseLFSR1_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisetimer_entity.vhd
+    Info (12023): Found entity 1: noisetimer File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisetimer_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisetimer_behav.vhd
+    Info (12022): Found design unit 1: noisetimer-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisetimer_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisewriteport_entity.vhd
+    Info (12023): Found entity 1: noisewriteport File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisewriteport_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisewriteport_behav.vhd
+    Info (12022): Found design unit 1: noisewriteport-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisewriteport_behav.vhd Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulseenv_entity.vhd
+    Info (12023): Found entity 1: pulseenv File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulseenv_entity.vhd Line: 15
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulseenv_behav.vhd
+    Info (12022): Found design unit 1: pulseenv-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulseenv_behav.vhd Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/premixer_entity.vhd
+    Info (12023): Found entity 1: premixer File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/premixer_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/premixer_behav.vhd
+    Info (12022): Found design unit 1: premixer-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/premixer_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulselentghunit_entity.vhd
+    Info (12023): Found entity 1: pulselentghunit File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulselentghunit_entity.vhd Line: 15
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulselentghunit_behav.vhd
+    Info (12022): Found design unit 1: pulselentghunit-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulselentghunit_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd
+    Info (12022): Found design unit 1: noisechannel-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_entity.vhd
+    Info (12023): Found entity 1: pulsechannel File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_entity.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/psweep_entity.vhd
+    Info (12023): Found entity 1: psweep File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/psweep_entity.vhd Line: 15
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/psweep_behav.vhd
+    Info (12022): Found design unit 1: psweep-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/psweep_behav.vhd Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_entity.vhd
+    Info (12023): Found entity 1: pulsewriteport2 File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_entity.vhd Line: 15
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_behav.vhd
+    Info (12022): Found design unit 1: pulsewriteport2-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_behav.vhd Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_entity.vhd
+    Info (12023): Found entity 1: pulsedividersequence File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_entity.vhd Line: 15
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_behav.vhd
+    Info (12022): Found design unit 1: pulsedividersequence-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_behav.vhd Line: 14
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_struct.vhd
+    Info (12022): Found design unit 1: pulsechannel-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_struct.vhd Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/statusandaddrdec_entity.vhd
+    Info (12023): Found entity 1: statusandaddrdec File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/statusandaddrdec_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/statusandaddrdec_behav.vhd
+    Info (12022): Found design unit 1: statusandaddrdec-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/statusandaddrdec_behav.vhd Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_entity.vhd
+    Info (12023): Found entity 1: trianglechannel File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelengthunit_entity.vhd
+    Info (12023): Found entity 1: trianglelengthunit File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelengthunit_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelengthunit_behav.vhd
+    Info (12022): Found design unit 1: trianglelengthunit-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelengthunit_behav.vhd Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/timer1_entity.vhd
+    Info (12023): Found entity 1: timer1 File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/timer1_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/timer1_behav.vhd
+    Info (12022): Found design unit 1: timer1-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/timer1_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglewriteport_entity.vhd
+    Info (12023): Found entity 1: trianglewriteport File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglewriteport_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglewriteport_behav.vhd
+    Info (12022): Found design unit 1: trianglewriteport-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglewriteport_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelinearctr_entity.vhd
+    Info (12023): Found entity 1: trianglelinearctr File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelinearctr_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelinearctr_behav.vhd
+    Info (12022): Found design unit 1: trianglelinearctr-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelinearctr_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/triangleseq_entity.vhd
+    Info (12023): Found entity 1: triangleseq File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/triangleseq_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/triangleseq_behav.vhd
+    Info (12022): Found design unit 1: triangleseq-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/triangleseq_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_struct.vhd
+    Info (12022): Found design unit 1: trianglechannel-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_struct.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_entity.vhd
+    Info (12023): Found entity 1: dmcchannnel File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcmemoryreader_entity.vhd
+    Info (12023): Found entity 1: dmcmemoryReader File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcmemoryreader_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcmemoryReader_behav.vhd
+    Info (12022): Found design unit 1: dmcmemoryReader-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcmemoryReader_behav.vhd Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcoutputlevel_entity.vhd
+    Info (12023): Found entity 1: dmcoutputlevel File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcoutputlevel_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcoutputlevel1_behav.vhd
+    Info (12022): Found design unit 1: dmcoutputlevel-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcoutputlevel1_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcsampleshifter_entity.vhd
+    Info (12023): Found entity 1: dmcsampleshifter File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcsampleshifter_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcsampleshifter_behav.vhd
+    Info (12022): Found design unit 1: dmcsampleshifter-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcsampleshifter_behav.vhd Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmctimer_entity.vhd
+    Info (12023): Found entity 1: dmctimer File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmctimer_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmctimer_behav.vhd
+    Info (12022): Found design unit 1: dmctimer-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmctimer_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcwriteport_entity.vhd
+    Info (12023): Found entity 1: dmcwriteport File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcwriteport_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcwriteport1_behav.vhd
+    Info (12022): Found design unit 1: dmcwriteport-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcwriteport1_behav.vhd Line: 16
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_struct.vhd
+    Info (12022): Found design unit 1: dmcchannnel-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_struct.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/framecounter_entity.vhd
+    Info (12023): Found entity 1: framecounter File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/framecounter_entity.vhd Line: 12
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/framecounter_behav.vhd
+    Info (12022): Found design unit 1: framecounter-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/framecounter_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd
+    Info (12022): Found design unit 1: apu-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_entity.vhd
+    Info (12023): Found entity 1: memorieswrapper File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_entity.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESbootROM.vhd
+    Info (12022): Found design unit 1: quartusnesbootrom-SYN File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESbootROM.vhd Line: 55
+    Info (12023): Found entity 1: quartusNESbootROM File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESbootROM.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartuscompatibleram_behav.vhd
+    Info (12022): Found design unit 1: quartuscompatibleram-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartuscompatibleram_behav.vhd Line: 41
+    Info (12023): Found entity 1: quartuscompatibleram File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartuscompatibleram_behav.vhd Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/songramwrapper_entity.vhd
+    Info (12023): Found entity 1: songRAMwrapper File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/songramwrapper_entity.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESsongRAM.vhd
+    Info (12022): Found design unit 1: quartusnessongram-SYN File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESsongRAM.vhd Line: 55
+    Info (12023): Found entity 1: quartusNESsongRAM File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESsongRAM.vhd Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bytemux1_entity.vhd
+    Info (12023): Found entity 1: bytemux1 File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bytemux1_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bytemux1_behav.vhd
+    Info (12022): Found design unit 1: bytemux1-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bytemux1_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/songramwrapper_struct.vhd
+    Info (12022): Found design unit 1: songRAMwrapper-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/songramwrapper_struct.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodereadmem_entity.vhd
+    Info (12023): Found entity 1: addrdecodereadmem File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodereadmem_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead1_behav.vhd
+    Info (12022): Found design unit 1: addrdecodereadmem-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead1_behav.vhd Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bankswitcher_entity.vhd
+    Info (12023): Found entity 1: bankswitcher File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bankswitcher_entity.vhd Line: 14
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bankswitcher_behav.vhd
+    Info (12022): Found design unit 1: bankswitcher-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bankswitcher_behav.vhd Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/initialisableram_entity.vhd
+    Info (12023): Found entity 1: initialisableRAM File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/initialisableram_entity.vhd Line: 14
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/initialisableRAM_behav.vhd
+    Info (12022): Found design unit 1: initialisableRAM-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/initialisableRAM_behav.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd
+    Info (12022): Found design unit 1: memorieswrapper-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/controlport_entity.vhd
+    Info (12023): Found entity 1: controlPort File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/controlport_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/controlPort_behav.vhd
+    Info (12022): Found design unit 1: controlPort-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/controlPort_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/twoportarbiter_entity.vhd
+    Info (12023): Found entity 1: twoportarbiter File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/twoportarbiter_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/twoportarbiter_behav.vhd
+    Info (12022): Found design unit 1: twoportarbiter-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/twoportarbiter_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodereaddev_entity.vhd
+    Info (12023): Found entity 1: addrdecodereaddev File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodereaddev_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead_behav.vhd
+    Info (12022): Found design unit 1: addrdecodereaddev-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead_behav.vhd Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/taktteilerboolean_entity.vhd
+    Info (12023): Found entity 1: taktteilerboolean File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/taktteilerboolean_entity.vhd Line: 14
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/taktteilerboolean_behav.vhd
+    Info (12022): Found design unit 1: taktteilerboolean-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/taktteilerboolean_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodewrite_entity.vhd
+    Info (12023): Found entity 1: addrdecodewrite File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodewrite_entity.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodewrite_behav.vhd
+    Info (12022): Found design unit 1: addrdecodewrite-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodewrite_behav.vhd Line: 12
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd
+    Info (12022): Found design unit 1: completeNES-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 15
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd
+    Info (12022): Found design unit 1: NESPlayertoplevel-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/clk_res_gen_entity.vhd
+    Info (12023): Found entity 1: clk_res_gen File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/clk_res_gen_entity.vhd Line: 12
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/clk_res_gen_behav.vhd
+    Info (12022): Found design unit 1: clk_res_gen-behav File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/clk_res_gen_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nestopleveltb_struct.vhd
+    Info (12022): Found design unit 1: NEStoplevelTB-struct File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nestopleveltb_struct.vhd Line: 15
+Info (12127): Elaborating entity "NEStoplevelTB" for the top level hierarchy
+Info (12128): Elaborating entity "NESPlayertoplevel" for hierarchy "NESPlayertoplevel:U_0" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nestopleveltb_struct.vhd Line: 55
+Warning (10036): Verilog HDL or VHDL warning at nesplayertoplevel_struct.vhd(25): object "error" assigned a value but never read File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 25
+Info (12128): Elaborating entity "SSM2603regwriter" for hierarchy "NESPlayertoplevel:U_0|SSM2603regwriter:U_2" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 176
+Warning (10036): Verilog HDL or VHDL warning at SSM2603regwriter_behav.vhd(19): object "lastsetreg" assigned a value but never read File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(78): signal "regaddr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(78): signal "regdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(81): signal "regdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(67): inferring latch(es) for signal or variable "I2Ctransfreq", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(67): inferring latch(es) for signal or variable "writedone", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at SSM2603regwriter_behav.vhd(67): inferring latch(es) for signal or variable "data_wr", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[0]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[1]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[2]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[3]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[4]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[5]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[6]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "data_wr[7]" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "writedone" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (10041): Inferred latch for "I2Ctransfreq" at SSM2603regwriter_behav.vhd(67) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/SSM2603regwriter_behav.vhd Line: 67
+Info (12128): Elaborating entity "codecsetup" for hierarchy "NESPlayertoplevel:U_0|codecsetup:U_7" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at codecsetup1_behav.vhd(156): signal "leftadcvol" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at codecsetup1_behav.vhd(157): signal "rightadcvol" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at codecsetup1_behav.vhd(158): signal "leftdacvol" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at codecsetup1_behav.vhd(159): signal "rightdacvol" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 159
+Warning (10631): VHDL Process Statement warning at codecsetup1_behav.vhd(137): inferring latch(es) for signal or variable "ready", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 137
+Warning (10631): VHDL Process Statement warning at codecsetup1_behav.vhd(137): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 137
+Warning (10631): VHDL Process Statement warning at codecsetup1_behav.vhd(137): inferring latch(es) for signal or variable "error", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 137
+Info (10041): Inferred latch for "error" at codecsetup1_behav.vhd(137) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 137
+Info (10041): Inferred latch for "ready" at codecsetup1_behav.vhd(137) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/codecsetup1_behav.vhd Line: 137
+Info (12128): Elaborating entity "completeNES" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 207
+Warning (10036): Verilog HDL or VHDL warning at completenes_struct.vhd(46): object "dmcportackwrite" assigned a value but never read File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 46
+Info (12128): Elaborating entity "addrdecodereaddev" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|addrdecodereaddev:U_5" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 244
+Warning (10492): VHDL Process Statement warning at addrdecoderead_behav.vhd(22): signal "apudataout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead_behav.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at addrdecoderead_behav.vhd(24): signal "memdataout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead_behav.vhd Line: 24
+Info (12128): Elaborating entity "addrdecodewrite" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|addrdecodewrite:U_8" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 253
+Info (12128): Elaborating entity "apu" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 268
+Info (12128): Elaborating entity "apumixer" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|apumixer:apumix" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd Line: 198
+Info (12128): Elaborating entity "dmcchannnel" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|dmcchannnel:U_1" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd Line: 207
+Info (12128): Elaborating entity "dmcmemoryReader" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|dmcchannnel:U_1|dmcmemoryReader:dmcmemrd" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_struct.vhd Line: 134
+Info (12128): Elaborating entity "dmcoutputlevel" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|dmcchannnel:U_1|dmcoutputlevel:dmcolev" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_struct.vhd Line: 154
+Info (12128): Elaborating entity "dmcsampleshifter" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|dmcchannnel:U_1|dmcsampleshifter:dmcshft" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_struct.vhd Line: 165
+Info (12128): Elaborating entity "dmctimer" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|dmcchannnel:U_1|dmctimer:dmctim" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_struct.vhd Line: 178
+Info (12128): Elaborating entity "dmcwriteport" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|dmcchannnel:U_1|dmcwriteport:dmcwp" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_struct.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at dmcwriteport1_behav.vhd(73): signal "enabled" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcwriteport1_behav.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at dmcwriteport1_behav.vhd(75): signal "playbackdone" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcwriteport1_behav.vhd Line: 75
+Info (12128): Elaborating entity "framecounter" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|framecounter:U_2" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd Line: 225
+Info (12128): Elaborating entity "noisechannel" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|noisechannel:noise" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd Line: 239
+Info (12128): Elaborating entity "NoiseLFSR1" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|noisechannel:noise|NoiseLFSR1:nlfsr" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd Line: 132
+Info (12128): Elaborating entity "noisetimer" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|noisechannel:noise|noisetimer:ntimer" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd Line: 141
+Info (12128): Elaborating entity "noisewriteport" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|noisechannel:noise|noisewriteport:nwport" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd Line: 149
+Warning (10492): VHDL Process Statement warning at noisewriteport_behav.vhd(55): signal "enabled" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisewriteport_behav.vhd Line: 55
+Warning (10492): VHDL Process Statement warning at noisewriteport_behav.vhd(56): signal "enabled" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisewriteport_behav.vhd Line: 56
+Info (12128): Elaborating entity "premixer" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|noisechannel:noise|premixer:U_0" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd Line: 169
+Info (12128): Elaborating entity "pulseenv" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|noisechannel:noise|pulseenv:puenv" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd Line: 178
+Info (12128): Elaborating entity "pulselentghunit" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|noisechannel:noise|pulselentghunit:U_3" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd Line: 190
+Info (12128): Elaborating entity "pulsechannel" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|pulsechannel:p1" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd Line: 253
+Info (12128): Elaborating entity "psweep" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|pulsechannel:p1|psweep:U_0" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_struct.vhd Line: 172
+Warning (10631): VHDL Process Statement warning at psweep_behav.vhd(56): inferring latch(es) for signal or variable "newperiodtoolarge", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/psweep_behav.vhd Line: 56
+Info (10041): Inferred latch for "periodshifter:newperiodtoolarge" at psweep_behav.vhd(63) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/psweep_behav.vhd Line: 63
+Info (12128): Elaborating entity "pulsedividersequence" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|pulsechannel:p1|pulsedividersequence:U_2" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_struct.vhd Line: 188
+Warning (10492): VHDL Process Statement warning at pulsedividersequence_behav.vhd(87): signal "pulseduty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_behav.vhd Line: 87
+Warning (10631): VHDL Process Statement warning at pulsedividersequence_behav.vhd(44): inferring latch(es) for signal or variable "q", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_behav.vhd Line: 44
+Info (10041): Inferred latch for "q" at pulsedividersequence_behav.vhd(44) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_behav.vhd Line: 44
+Info (12128): Elaborating entity "pulsewriteport2" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|pulsechannel:p1|pulsewriteport2:U_1" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_struct.vhd Line: 221
+Warning (10541): VHDL Signal Declaration warning at pulsewriteport2_entity.vhd(31): used implicit default value for signal "restartenv" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_entity.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at pulsewriteport2_entity.vhd(36): used implicit default value for signal "sweepreload" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_entity.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at pulsewriteport2_behav.vhd(68): signal "enabled" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_behav.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at pulsewriteport2_behav.vhd(69): signal "enabled" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_behav.vhd Line: 69
+Info (12128): Elaborating entity "statusandaddrdec" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|statusandaddrdec:statadrdec" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd Line: 283
+Warning (10492): VHDL Process Statement warning at statusandaddrdec_behav.vhd(71): signal "rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/statusandaddrdec_behav.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at statusandaddrdec_behav.vhd(91): signal "frameint" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/statusandaddrdec_behav.vhd Line: 91
+Info (12128): Elaborating entity "trianglechannel" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|trianglechannel:tri" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd Line: 318
+Info (12128): Elaborating entity "timer1" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|trianglechannel:tri|timer1:tritim" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_struct.vhd Line: 140
+Info (12128): Elaborating entity "trianglelengthunit" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|trianglechannel:tri|trianglelengthunit:trilen" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_struct.vhd Line: 148
+Info (12128): Elaborating entity "trianglelinearctr" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|trianglechannel:tri|trianglelinearctr:U_0" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_struct.vhd Line: 158
+Info (12128): Elaborating entity "triangleseq" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|trianglechannel:tri|triangleseq:U_2" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_struct.vhd Line: 168
+Info (12128): Elaborating entity "trianglewriteport" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|apu:U_0|trianglechannel:tri|trianglewriteport:triWport" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_struct.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at trianglewriteport_behav.vhd(52): signal "enabled" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglewriteport_behav.vhd Line: 52
+Warning (10492): VHDL Process Statement warning at trianglewriteport_behav.vhd(53): signal "enabled" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglewriteport_behav.vhd Line: 53
+Info (12128): Elaborating entity "controlPort" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|controlPort:U_3" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 286
+Info (12128): Elaborating entity "memarbitermx65interface" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memarbitermx65interface:arbcpuif" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 296
+Warning (10036): Verilog HDL or VHDL warning at memarbitermx65interface_behav.vhd(13): object "waitingformemtransaction" assigned a value but never read File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_behav.vhd Line: 13
+Warning (10492): VHDL Process Statement warning at memarbitermx65interface_behav.vhd(55): signal "cpu_data_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_behav.vhd Line: 55
+Warning (10492): VHDL Process Statement warning at memarbitermx65interface_behav.vhd(56): signal "cpuportdatatodev" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_behav.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at memarbitermx65interface_behav.vhd(57): signal "cpu_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_behav.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at memarbitermx65interface_behav.vhd(59): signal "tickCPU" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_behav.vhd Line: 59
+Info (12128): Elaborating entity "memorieswrapper" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 315
+Info (12128): Elaborating entity "addrdecodereadmem" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|addrdecodereadmem:U_5" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at addrdecoderead1_behav.vhd(20): signal "lowsysramdataout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead1_behav.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at addrdecoderead1_behav.vhd(24): signal "bootRAMdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead1_behav.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at addrdecoderead1_behav.vhd(28): signal "highsysramdataout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead1_behav.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at addrdecoderead1_behav.vhd(33): signal "overlayvectors" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead1_behav.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at addrdecoderead1_behav.vhd(34): signal "vectorRAMdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead1_behav.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at addrdecoderead1_behav.vhd(36): signal "songRAMdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead1_behav.vhd Line: 36
+Info (12128): Elaborating entity "bankswitcher" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|bankswitcher:U_9" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at bankswitcher_behav.vhd(48): signal "maparray" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bankswitcher_behav.vhd Line: 48
+Info (12128): Elaborating entity "initialisableRAM" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|initialisableRAM:vectorsram" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd Line: 169
+Info (12128): Elaborating entity "quartusNESbootROM" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|quartusNESbootROM:bootRAM" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd Line: 182
+Info (12128): Elaborating entity "altsyncram" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|quartusNESbootROM:bootRAM|altsyncram:altsyncram_component" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESbootROM.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|quartusNESbootROM:bootRAM|altsyncram:altsyncram_component" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESbootROM.vhd Line: 62
+Info (12133): Instantiated megafunction "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|quartusNESbootROM:bootRAM|altsyncram:altsyncram_component" with the following parameter: File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESbootROM.vhd Line: 62
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "./bootROM4kx8ln.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "4096"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "12"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_n234.tdf
+    Info (12023): Found entity 1: altsyncram_n234 File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/qis/@n@e@stoplevel@t@b_struct/db/altsyncram_n234.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_n234" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|quartusNESbootROM:bootRAM|altsyncram:altsyncram_component|altsyncram_n234:auto_generated" File: /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "quartuscompatibleram" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|quartuscompatibleram:highsysram" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd Line: 190
+Info (12128): Elaborating entity "quartuscompatibleram" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|quartuscompatibleram:lowsysram" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd Line: 203
+Info (12128): Elaborating entity "songRAMwrapper" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memorieswrapper_struct.vhd Line: 216
+Info (12128): Elaborating entity "bytemux1" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|bytemux1:U_1" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/songramwrapper_struct.vhd Line: 61
+Info (12128): Elaborating entity "quartusNESsongRAM" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|quartusNESsongRAM:U_0" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/songramwrapper_struct.vhd Line: 68
+Info (12128): Elaborating entity "altsyncram" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|quartusNESsongRAM:U_0|altsyncram:altsyncram_component" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESsongRAM.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|quartusNESsongRAM:U_0|altsyncram:altsyncram_component" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESsongRAM.vhd Line: 62
+Info (12133): Instantiated megafunction "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|quartusNESsongRAM:U_0|altsyncram:altsyncram_component" with the following parameter: File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartusNESsongRAM.vhd Line: 62
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "crispylettuceref.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "65536"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "16"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3g34.tdf
+    Info (12023): Found entity 1: altsyncram_3g34 File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/qis/@n@e@stoplevel@t@b_struct/db/altsyncram_3g34.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_3g34" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|quartusNESsongRAM:U_0|altsyncram:altsyncram_component|altsyncram_3g34:auto_generated" File: /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dla.tdf
+    Info (12023): Found entity 1: decode_dla File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/qis/@n@e@stoplevel@t@b_struct/db/decode_dla.tdf Line: 23
+Info (12128): Elaborating entity "decode_dla" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|quartusNESsongRAM:U_0|altsyncram:altsyncram_component|altsyncram_3g34:auto_generated|decode_dla:decode3" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/qis/@n@e@stoplevel@t@b_struct/db/altsyncram_3g34.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
+    Info (12023): Found entity 1: decode_61a File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/qis/@n@e@stoplevel@t@b_struct/db/decode_61a.tdf Line: 23
+Info (12128): Elaborating entity "decode_61a" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|quartusNESsongRAM:U_0|altsyncram:altsyncram_component|altsyncram_3g34:auto_generated|decode_61a:rden_decode" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/qis/@n@e@stoplevel@t@b_struct/db/altsyncram_3g34.tdf Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ahb.tdf
+    Info (12023): Found entity 1: mux_ahb File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/qis/@n@e@stoplevel@t@b_struct/db/mux_ahb.tdf Line: 23
+Info (12128): Elaborating entity "mux_ahb" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|memorieswrapper:U_10|songRAMwrapper:U_1|quartusNESsongRAM:U_0|altsyncram:altsyncram_component|altsyncram_3g34:auto_generated|mux_ahb:mux2" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/qis/@n@e@stoplevel@t@b_struct/db/altsyncram_3g34.tdf Line: 46
+Info (12128): Elaborating entity "mx65withtick" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|mx65withtick:mx65mod" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 328
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(132): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(147): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(174): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(283): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 283
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(666): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 666
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(688): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 688
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(710): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 710
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(734): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 734
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(765): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 765
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(796): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 796
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(819): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 819
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(844): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 844
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(867): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 867
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(888): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 888
+Warning (10492): VHDL Process Statement warning at mx65withtick_behav.vhd(914): signal "tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd Line: 914
+Info (12128): Elaborating entity "taktteilerboolean" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|taktteilerboolean:U_6" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 342
+Info (12128): Elaborating entity "taktteilerboolean" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|taktteilerboolean:U_7" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 351
+Info (12128): Elaborating entity "twoportarbiter" for hierarchy "NESPlayertoplevel:U_0|completeNES:U_8|twoportarbiter:U_4" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd Line: 360
+Info (12128): Elaborating entity "i2c_master" for hierarchy "NESPlayertoplevel:U_0|i2c_master:U_0" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 215
+Info (12128): Elaborating entity "i2s_transceiver" for hierarchy "NESPlayertoplevel:U_0|i2s_transceiver:U_1" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 233
+Info (12128): Elaborating entity "pll5012new" for hierarchy "NESPlayertoplevel:U_0|pll5012new:U_5" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 251
+Info (12128): Elaborating entity "pll5012new_0002" for hierarchy "NESPlayertoplevel:U_0|pll5012new:U_5|pll5012new_0002:pll5012new_inst" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new.vhd Line: 31
+Info (12128): Elaborating entity "altera_pll" for hierarchy "NESPlayertoplevel:U_0|pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new/pll5012new_0002.v Line: 85
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
+Info (12130): Elaborated megafunction instantiation "NESPlayertoplevel:U_0|pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new/pll5012new_0002.v Line: 85
+Info (12133): Instantiated megafunction "NESPlayertoplevel:U_0|pll5012new:U_5|pll5012new_0002:pll5012new_inst|altera_pll:altera_pll_i" with the following parameter: File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pll5012new/pll5012new_0002.v Line: 85
+    Info (12134): Parameter "fractional_vco_multiplier" = "false"
+    Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
+    Info (12134): Parameter "operation_mode" = "direct"
+    Info (12134): Parameter "number_of_clocks" = "1"
+    Info (12134): Parameter "output_clock_frequency0" = "12.000000 MHz"
+    Info (12134): Parameter "phase_shift0" = "0 ps"
+    Info (12134): Parameter "duty_cycle0" = "50"
+    Info (12134): Parameter "output_clock_frequency1" = "0 MHz"
+    Info (12134): Parameter "phase_shift1" = "0 ps"
+    Info (12134): Parameter "duty_cycle1" = "50"
+    Info (12134): Parameter "output_clock_frequency2" = "0 MHz"
+    Info (12134): Parameter "phase_shift2" = "0 ps"
+    Info (12134): Parameter "duty_cycle2" = "50"
+    Info (12134): Parameter "output_clock_frequency3" = "0 MHz"
+    Info (12134): Parameter "phase_shift3" = "0 ps"
+    Info (12134): Parameter "duty_cycle3" = "50"
+    Info (12134): Parameter "output_clock_frequency4" = "0 MHz"
+    Info (12134): Parameter "phase_shift4" = "0 ps"
+    Info (12134): Parameter "duty_cycle4" = "50"
+    Info (12134): Parameter "output_clock_frequency5" = "0 MHz"
+    Info (12134): Parameter "phase_shift5" = "0 ps"
+    Info (12134): Parameter "duty_cycle5" = "50"
+    Info (12134): Parameter "output_clock_frequency6" = "0 MHz"
+    Info (12134): Parameter "phase_shift6" = "0 ps"
+    Info (12134): Parameter "duty_cycle6" = "50"
+    Info (12134): Parameter "output_clock_frequency7" = "0 MHz"
+    Info (12134): Parameter "phase_shift7" = "0 ps"
+    Info (12134): Parameter "duty_cycle7" = "50"
+    Info (12134): Parameter "output_clock_frequency8" = "0 MHz"
+    Info (12134): Parameter "phase_shift8" = "0 ps"
+    Info (12134): Parameter "duty_cycle8" = "50"
+    Info (12134): Parameter "output_clock_frequency9" = "0 MHz"
+    Info (12134): Parameter "phase_shift9" = "0 ps"
+    Info (12134): Parameter "duty_cycle9" = "50"
+    Info (12134): Parameter "output_clock_frequency10" = "0 MHz"
+    Info (12134): Parameter "phase_shift10" = "0 ps"
+    Info (12134): Parameter "duty_cycle10" = "50"
+    Info (12134): Parameter "output_clock_frequency11" = "0 MHz"
+    Info (12134): Parameter "phase_shift11" = "0 ps"
+    Info (12134): Parameter "duty_cycle11" = "50"
+    Info (12134): Parameter "output_clock_frequency12" = "0 MHz"
+    Info (12134): Parameter "phase_shift12" = "0 ps"
+    Info (12134): Parameter "duty_cycle12" = "50"
+    Info (12134): Parameter "output_clock_frequency13" = "0 MHz"
+    Info (12134): Parameter "phase_shift13" = "0 ps"
+    Info (12134): Parameter "duty_cycle13" = "50"
+    Info (12134): Parameter "output_clock_frequency14" = "0 MHz"
+    Info (12134): Parameter "phase_shift14" = "0 ps"
+    Info (12134): Parameter "duty_cycle14" = "50"
+    Info (12134): Parameter "output_clock_frequency15" = "0 MHz"
+    Info (12134): Parameter "phase_shift15" = "0 ps"
+    Info (12134): Parameter "duty_cycle15" = "50"
+    Info (12134): Parameter "output_clock_frequency16" = "0 MHz"
+    Info (12134): Parameter "phase_shift16" = "0 ps"
+    Info (12134): Parameter "duty_cycle16" = "50"
+    Info (12134): Parameter "output_clock_frequency17" = "0 MHz"
+    Info (12134): Parameter "phase_shift17" = "0 ps"
+    Info (12134): Parameter "duty_cycle17" = "50"
+    Info (12134): Parameter "pll_type" = "General"
+    Info (12134): Parameter "pll_subtype" = "General"
+Info (12128): Elaborating entity "toplevelcontrol" for hierarchy "NESPlayertoplevel:U_0|toplevelcontrol:ctrl" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nesplayertoplevel_struct.vhd Line: 257
+Warning (10492): VHDL Process Statement warning at toplevelcontrol_behav.vhd(54): signal "mix" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at toplevelcontrol_behav.vhd(55): signal "mix" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 55
+Warning (10631): VHDL Process Statement warning at toplevelcontrol_behav.vhd(17): inferring latch(es) for signal or variable "leftadcvol", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at toplevelcontrol_behav.vhd(17): inferring latch(es) for signal or variable "rightadcvol", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at toplevelcontrol_behav.vhd(17): inferring latch(es) for signal or variable "bothvolumes", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at toplevelcontrol_behav.vhd(17): inferring latch(es) for signal or variable "update", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at toplevelcontrol_behav.vhd(17): inferring latch(es) for signal or variable "allzeros", which holds its previous value in one or more paths through the process File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "update" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "rightadcvol[0]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "rightadcvol[1]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "rightadcvol[2]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "rightadcvol[3]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "rightadcvol[4]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "rightadcvol[5]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "leftadcvol[0]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "leftadcvol[1]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "leftadcvol[2]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "leftadcvol[3]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "leftadcvol[4]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "leftadcvol[5]" at toplevelcontrol_behav.vhd(17) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 17
+Info (10041): Inferred latch for "allzeros[0]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "allzeros[1]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "allzeros[2]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "allzeros[3]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "allzeros[4]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "allzeros[5]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "allzeros[6]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "allzeros[7]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "bothvolumes[0]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "bothvolumes[1]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "bothvolumes[2]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "bothvolumes[3]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "bothvolumes[4]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "bothvolumes[5]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (10041): Inferred latch for "bothvolumes[6]" at toplevelcontrol_behav.vhd(30) File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/toplevelcontrol_behav.vhd Line: 30
+Info (12128): Elaborating entity "clk_res_gen" for hierarchy "clk_res_gen:U_1" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nestopleveltb_struct.vhd Line: 67
+Error (10533): VHDL Wait Statement error at clk_res_gen_behav.vhd(15): Wait Statement must contain condition clause with UNTIL keyword File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/clk_res_gen_behav.vhd Line: 15
+Error (12152): Can't elaborate user hierarchy "clk_res_gen:U_1" File: /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/nestopleveltb_struct.vhd Line: 67
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 68 warnings
+    Error: Peak virtual memory: 524 megabytes
+    Error: Processing ended: Mon Feb  5 10:42:51 2024
+    Error: Elapsed time: 00:00:06
+    Error: Total CPU time (on all processors): 00:00:12
+
+

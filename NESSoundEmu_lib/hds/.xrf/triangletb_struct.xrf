@@ -1,0 +1,290 @@
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 0
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 41,0 9 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 11
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 0,0 14 2 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 417,0 19 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 411,0 20 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 395,0 21 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 586,0 22 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 415,0 23 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 401,0 24 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 407,0 25 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 403,0 26 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 419,0 27 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 421,0 28 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 399,0 29 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 405,0 30 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 397,0 31 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 409,0 32 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 413,0 33 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 34
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 35
+LIBRARY audiotest_lib
+DESIGN clk_res_gen
+VIEW behav
+GRAPHIC 129,0 37 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 41
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 791,0 43 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 480,0 45 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 485,0 46 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 495,0 47 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 510,0 48 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 520,0 49 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 525,0 50 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 490,0 51 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 500,0 52 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 505,0 53 0 
+DESIGN framectr
+VIEW symbol.sb
+GRAPHIC 515,0 54 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 813,0 57 0 
+DESIGN taktteilerboolean
+VIEW symbol.sb
+GRAPHIC 14,0 58 1 
+DESIGN taktteilerboolean
+VIEW symbol.sb
+GRAPHIC 177,0 62 0 
+DESIGN taktteilerboolean
+VIEW symbol.sb
+GRAPHIC 182,0 63 0 
+DESIGN taktteilerboolean
+VIEW symbol.sb
+GRAPHIC 187,0 64 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 119,0 67 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 209,0 69 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 215,0 70 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 223,0 71 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 355,0 72 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 347,0 73 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 291,0 74 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 259,0 75 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 299,0 76 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 339,0 77 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 423,0 80 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 355,0 82 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 307,0 83 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 231,0 84 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 578,0 85 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 347,0 86 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 323,0 87 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 331,0 88 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 315,0 89 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 237,0 90 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 339,0 91 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 371,0 92 0 
+LIBRARY audiotest_lib
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 95
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 129,0 98 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 791,0 99 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 813,0 100 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 119,0 101 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 423,0 102 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 105
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 107
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 129,0 109 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 231,0 111 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 237,0 112 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 791,0 114 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 199,0 116 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 251,0 117 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 291,0 118 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 259,0 119 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 243,0 120 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 299,0 121 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 267,0 122 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 275,0 123 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 363,0 124 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 283,0 125 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 813,0 127 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 820,0 128 1 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 379,0 132 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 387,0 133 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 199,0 134 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 835,0 136 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 842,0 137 1 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 723,0 141 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 733,0 142 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 743,0 143 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 119,0 145 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+GRAPHIC 423,0 157 0 
+DESIGN triangle@t@b
+VIEW struct.bd
+NO_GRAPHIC 172

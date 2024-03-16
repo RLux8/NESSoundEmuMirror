@@ -1,0 +1,33 @@
+DESIGN trianglelinearctr
+VIEW interface
+NO_GRAPHIC 0
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 180,0 14 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 185,0 15 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 190,0 16 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 200,0 17 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 205,0 18 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 210,0 19 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 195,0 20 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 1,0 23 0 
+DESIGN trianglelinearctr
+VIEW interface
+GRAPHIC 1,0 24 0 

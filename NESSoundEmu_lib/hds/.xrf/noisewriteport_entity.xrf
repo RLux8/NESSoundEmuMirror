@@ -1,0 +1,63 @@
+DESIGN noisewriteport
+VIEW interface
+NO_GRAPHIC 0
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1202,0 14 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1207,0 15 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1217,0 16 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1222,0 17 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1252,0 18 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1277,0 19 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1212,0 20 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1227,0 21 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1232,0 22 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1237,0 23 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1242,0 24 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1247,0 25 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1257,0 26 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1262,0 27 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1267,0 28 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1272,0 29 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1282,0 30 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1,0 33 0 
+DESIGN noisewriteport
+VIEW interface
+GRAPHIC 1,0 34 0 

@@ -1,0 +1,35 @@
+
+State Machine - |audiotestunits|i2c_master:U_0|state
+Name state.stop state.mstr_ack state.slv_ack2 state.rd state.wr state.slv_ack1 state.command state.start state.ready 
+state.ready 0 0 0 0 0 0 0 0 0 
+state.start 0 0 0 0 0 0 0 1 1 
+state.command 0 0 0 0 0 0 1 0 1 
+state.slv_ack1 0 0 0 0 0 1 0 0 1 
+state.wr 0 0 0 0 1 0 0 0 1 
+state.rd 0 0 0 1 0 0 0 0 1 
+state.slv_ack2 0 0 1 0 0 0 0 0 1 
+state.mstr_ack 0 1 0 0 0 0 0 0 1 
+state.stop 1 0 0 0 0 0 0 0 1 
+
+State Machine - |audiotestunits|codecsetup1:U_7|\fsm_state_transition:state
+Name \fsm_state_transition:state.DONE \fsm_state_transition:state.ENABLEDAC \fsm_state_transition:state.ENABLEDIGCORE \fsm_state_transition:state.WAITFORVMIDCAP \fsm_state_transition:state.WRITING \fsm_state_transition:state.WRITINGINIT \fsm_state_transition:state.POWERUP \fsm_state_transition:state.RESETCHIPWAIT \fsm_state_transition:state.INIT 
+\fsm_state_transition:state.INIT 0 0 0 0 0 0 0 0 0 
+\fsm_state_transition:state.RESETCHIPWAIT 0 0 0 0 0 0 0 1 1 
+\fsm_state_transition:state.POWERUP 0 0 0 0 0 0 1 0 1 
+\fsm_state_transition:state.WRITINGINIT 0 0 0 0 0 1 0 0 1 
+\fsm_state_transition:state.WRITING 0 0 0 0 1 0 0 0 1 
+\fsm_state_transition:state.WAITFORVMIDCAP 0 0 0 1 0 0 0 0 1 
+\fsm_state_transition:state.ENABLEDIGCORE 0 0 1 0 0 0 0 0 1 
+\fsm_state_transition:state.ENABLEDAC 0 1 0 0 0 0 0 0 1 
+\fsm_state_transition:state.DONE 1 0 0 0 0 0 0 0 1 
+
+State Machine - |audiotestunits|SSM2603regwriter:U_2|\fsm_state_transition:state
+Name \fsm_state_transition:state.DONE4 \fsm_state_transition:state.DONE3 \fsm_state_transition:state.DONE2 \fsm_state_transition:state.DONE1 \fsm_state_transition:state.WRITINGBYTE2 \fsm_state_transition:state.WRITINGBYTE1 \fsm_state_transition:state.WAITI2C \fsm_state_transition:state.IDLE 
+\fsm_state_transition:state.IDLE 0 0 0 0 0 0 0 0 
+\fsm_state_transition:state.WAITI2C 0 0 0 0 0 0 1 1 
+\fsm_state_transition:state.WRITINGBYTE1 0 0 0 0 0 1 0 1 
+\fsm_state_transition:state.WRITINGBYTE2 0 0 0 0 1 0 0 1 
+\fsm_state_transition:state.DONE1 0 0 0 1 0 0 0 1 
+\fsm_state_transition:state.DONE2 0 0 1 0 0 0 0 1 
+\fsm_state_transition:state.DONE3 0 1 0 0 0 0 0 1 
+\fsm_state_transition:state.DONE4 1 0 0 0 0 0 0 1 

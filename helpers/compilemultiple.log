@@ -1,0 +1,552 @@
+WARNING: Line 481 :unknown opcode sb
+  
+LISTING
+1    0000 :                                
+2    2000 :                  org $2000     
+3    2000 : BEGIN:                         ;this is where execution starts(boot ram)
+4    2000 :         A9 00    lda #$00      ; re-hide vector ram overlay
+5    2002 :         8D 20 40 sta $4020     
+6    2005 :                                
+7    2005 :         A9 55    lda #$55      
+8    2007 :         8D 40 40 sta STATUSLEDS
+9    200A :                                
+10   200A :         A9 00    lda #$0       
+11   200C :         8D 82 2E sta SELECTEDSONGOFFSL
+12   200F :         8D 83 2E sta SELECTEDSONGOFFSM
+13   2012 :         8D 84 2E sta SELECTEDSONGOFFSH
+14   2015 :                                
+15   2015 :         AD 40 40 lda SONGSEL   
+16   2018 :         8D 81 2E sta SELECTEDSONG
+17   201B :         85 00    sta $0        
+18   201D :         AD 00 80 lda $8000     
+19   2020 :         C5 00    cmp $0        
+20   2022 :         90 46    bcc SONGNUMERR; selected song number larger than available songs - 1?
+21   2024 :         F0 44    beq SONGNUMERR
+22   2026 :                                
+23   2026 :                                ; now calculate the nsf base offset
+24   2026 :                                ; calc offset
+25   2026 :         AD 81 2E lda SELECTEDSONG
+26   2029 :         18       clc           
+27   202A :         0A       asl A         
+28   202B :         0A       asl A         
+29   202C :         69 01    adc #$1       
+30   202E :         AA       tax           
+31   202F :                                ; store the offset in the boot ram
+32   202F :         BD 01 80 lda $8001, X  
+33   2032 :         8D 82 2E sta SELECTEDSONGOFFSL
+34   2035 :         BD 02 80 lda $8002, X  
+35   2038 :         8D 83 2E sta SELECTEDSONGOFFSM
+36   203B :         BD 03 80 lda $8003, X  
+37   203E :         8D 84 2E sta SELECTEDSONGOFFSH
+38   2041 :                                
+39   2041 :                                ; setup the bankswitcher to get access to the header of the selected .nsf file
+40   2041 :         AD 82 2E lda SELECTEDSONGOFFSL
+41   2044 :         8D 50 40 sta BKSWOFFSL 
+42   2047 :                                
+43   2047 :         AD 83 2E lda SELECTEDSONGOFFSM
+44   204A :         8D 51 40 sta BKSWOFFSM 
+45   204D :                                
+46   204D :         AD 84 2E lda SELECTEDSONGOFFSH
+47   2050 :         8D 52 40 sta BKSWOFFSH 
+48   2053 :                                
+49   2053 :                                
+50   2053 :                                ; check for supported NSf version
+51   2053 :         AD 05 80 lda $8005     
+52   2056 :         C9 01    cmp #$01      
+53   2058 :         D0 18    bne NSFVERERR 
+54   205A :                                
+55   205A :                                
+56   205A :                                ; check for ntsc tune...we dont support PAL(maybe in the future?)
+57   205A :         AD 7A 80 lda $807A     
+58   205D :         C9 01    cmp #$01      
+59   205F :         F0 19    beq REGIONERR 
+60   2061 :                                
+61   2061 :                                
+62   2061 :                                ;setup nes mixer..
+63   2061 :         AD 7B 80 lda $807B     
+64   2064 :         8D F3 5F sta APUMIXCTRL
+65   2067 :                                
+66   2067 :         4C 85 20 jmp COPYHEADER
+67   206A :                                
+68   206A :                                
+69   206A : SONGNUMERR:                       
+70   206A :         A9 04    lda #$04      
+71   206C :         8D 40 40 sta SONGSEL   
+72   206F :         4C 82 20 jmp LOCALERR  
+73   2072 :                                
+74   2072 : NSFVERERR:                       
+75   2072 :         A9 05    lda #$05      
+76   2074 :         8D 40 40 sta SONGSEL   
+77   2077 :         4C 82 20 jmp LOCALERR  
+78   207A :                                
+79   207A : REGIONERR:                       
+80   207A :         A9 06    lda #$06      
+81   207C :         8D 40 40 sta SONGSEL   
+82   207F :         4C 82 20 jmp LOCALERR  
+83   2082 :                                
+84   2082 : LOCALERR:4C 82 20 jmp LOCALERR  
+85   2085 :                                
+86   2085 :                                
+87   2085 : COPYHEADER:                       
+88   2085 :                                ; copy the file header(wont be accessible after bank switching...)
+89   2085 :                                
+90   2085 :                                
+91   2085 :         A9 00    lda #$00      
+92   2087 :         85 FB    sta $FB       
+93   2089 :         A9 80    lda #$80      
+94   208B :         85 FC    sta $FC       
+95   208D :         A9 00    lda #$00      
+96   208F :         85 FD    sta $FD       
+97   2091 :         A9 2E    lda #$2E      
+98   2093 :         85 FE    sta $FE       
+99   2095 :         A0 00    ldy #$0       
+100  2097 :                                
+101  2097 : NSFHEADERLOOP:                       
+102  2097 :         B1 FB    lda ($FB),Y   
+103  2099 :         91 FD    sta ($FD),Y   
+104  209B :         C8       iny           
+105  209C :         C0 80    cpy #$80      
+106  209E :         D0 F7    bne NSFHEADERLOOP
+107  20A0 :                                
+108  20A0 :                                
+109  20A0 :                                
+110  20A0 :                                ; check for bank switch settings
+111  20A0 :         A9 00    lda #$00      
+112  20A2 :         85 FD    sta $FD       
+113  20A4 :         A9 2E    lda #$2E      
+114  20A6 :         85 FE    sta $FE       
+115  20A8 :         A0 70    ldy #$70      
+116  20AA :                                
+117  20AA : NSFBKSWCHECKLOOP:                       
+118  20AA :         B1 FD    lda ($FD),Y   
+119  20AC :         D0 35    bne BANKWASNOTZERO
+120  20AE :         C8       iny           
+121  20AF :         C0 77    cpy #$77      
+122  20B1 :         D0 F7    bne NSFBKSWCHECKLOOP
+123  20B3 :                                
+124  20B3 :                                ; all bank switch init bytes were zero, do not use bank switching...setup linear memory map
+125  20B3 :         A9 00    lda #$00      
+126  20B5 :         8D F8 5F sta BKSWPAGENUMS
+127  20B8 :         A9 01    lda #$01      
+128  20BA :         8D F9 5F sta BKSWPAGENUMS+1
+129  20BD :         A9 02    lda #$02      
+130  20BF :         8D FA 5F sta BKSWPAGENUMS+2
+131  20C2 :         A9 03    lda #$03      
+132  20C4 :         8D FB 5F sta BKSWPAGENUMS+3
+133  20C7 :         A9 04    lda #$04      
+134  20C9 :         8D FC 5F sta BKSWPAGENUMS+4
+135  20CC :         A9 05    lda #$05      
+136  20CE :         8D FD 5F sta BKSWPAGENUMS+5
+137  20D1 :         A9 06    lda #$06      
+138  20D3 :         8D FE 5F sta BKSWPAGENUMS+6
+139  20D6 :         A9 07    lda #$07      
+140  20D8 :         8D FF 5F sta BKSWPAGENUMS+7
+141  20DB :         A9 00    lda #$00      
+142  20DD :         8D 54 40 sta BKSWEN    
+143  20E0 :         4C 03 21 jmp BKSWTABLEDONE
+144  20E3 :                                
+145  20E3 : BANKWASNOTZERO:                       
+146  20E3 :         A9 01    lda #$01      
+147  20E5 :         8D 54 40 sta BKSWEN    
+148  20E8 :                                
+149  20E8 :                                ; load initial bank switch settings...
+150  20E8 :         A9 70    lda #$70      
+151  20EA :         85 FB    sta $FB       
+152  20EC :         A9 2E    lda #$2E      
+153  20EE :         85 FC    sta $FC       
+154  20F0 :         A9 F8    lda #$F8      
+155  20F2 :         85 FD    sta $FD       
+156  20F4 :         A9 5F    lda #$5F      
+157  20F6 :         85 FE    sta $FE       
+158  20F8 :         A0 00    ldy #$0       
+159  20FA :                                
+160  20FA : NSFBKSWCOPYLOOP:                       
+161  20FA :         B1 FB    lda ($FB),Y   
+162  20FC :         91 FD    sta ($FD),Y   
+163  20FE :         C8       iny           
+164  20FF :         C0 07    cpy #$7       
+165  2101 :         D0 F7    bne NSFBKSWCOPYLOOP
+166  2103 :                                
+167  2103 : BKSWTABLEDONE:                       
+168  2103 :                                ; bank table is done, now calculate required offset as given in nsf header
+169  2103 :                                ; offset required is: OFF = NSF_BASE_OFFSET + $80 - (LOAD_ADDR - $8000)
+170  2103 :                                ; eg: loadaddr 8CD9, base offset 0D => FF3B4
+171  2103 :                                
+172  2103 :                                ; use ZP 0 for high byte of load address with cleared highest bit
+173  2103 :                                
+174  2103 :         A9 00    lda #$0       
+175  2105 :         85 00    sta $0        
+176  2107 :                                
+177  2107 :                                ; first calculate NSF_BASE_OFFSET + $80
+178  2107 :         18       clc           
+179  2108 :         AD 82 2E lda SELECTEDSONGOFFSL
+180  210B :         69 80    adc #$80      
+181  210D :         8D 82 2E sta SELECTEDSONGOFFSL
+182  2110 :         AD 83 2E lda SELECTEDSONGOFFSM
+183  2113 :         65 00    adc $0        
+184  2115 :         8D 83 2E sta SELECTEDSONGOFFSM
+185  2118 :         AD 84 2E lda SELECTEDSONGOFFSH
+186  211B :         65 00    adc $0        
+187  211D :         8D 84 2E sta SELECTEDSONGOFFSH
+188  2120 :                                
+189  2120 :                                ; now calculate LOAD_ADDR - $8000
+190  2120 :         AD 09 2E lda HDRLOADADDRH
+191  2123 :         29 7F    and #$7F      
+192  2125 :         85 00    sta $0        
+193  2127 :                                
+194  2127 :                                ; now do the big subtraction....
+195  2127 :         38       sec           ; no borrow
+196  2128 :         AD 82 2E lda SELECTEDSONGOFFSL
+197  212B :         ED 08 2E sbc HDRLOADADDRL
+198  212E :         8D 50 40 sta BKSWOFFSL 
+199  2131 :                                
+200  2131 :         AD 83 2E lda SELECTEDSONGOFFSM
+201  2134 :         E5 00    sbc $0        
+202  2136 :         8D 51 40 sta BKSWOFFSM 
+203  2139 :         AD 84 2E lda SELECTEDSONGOFFSH
+204  213C :         E9 00    sbc #$0       
+205  213E :         8D 52 40 sta BKSWOFFSH 
+206  2141 :                                
+207  2141 :                                
+208  2141 :                                ; setup apu registers....
+209  2141 :         A9 00    lda #$00      
+210  2143 :         85 FD    sta $FD       
+211  2145 :         A9 40    lda #$40      
+212  2147 :         85 FE    sta $FE       
+213  2149 :         A0 00    ldy #$0       
+214  214B :         A9 00    lda #$0       
+215  214D :                                
+216  214D : CLEARAPULOOP:                       
+217  214D :         91 FD    sta ($FD),Y   
+218  214F :         C8       iny           
+219  2150 :         C0 13    cpy #$13      
+220  2152 :         D0 F9    bne CLEARAPULOOP
+221  2154 :                                
+222  2154 :                                ; setup apu status, frame control as per .nsf spec
+223  2154 :         A9 0F    lda #$0F      
+224  2156 :         8D 15 40 sta APUSTATUSREG
+225  2159 :         A9 40    lda #$40      
+226  215B :         8D 17 40 sta FRAMECTRCTRL
+227  215E :                                
+228  215E :                                ; call init routine
+229  215E :                                ; self modifying code madness.....
+230  215E :         AD 0A 2E lda HDRINITADDRL
+231  2161 :         8D 01 22 sta $2201     
+232  2164 :         AD 0B 2E lda HDRINITADDRH
+233  2167 :         8D 02 22 sta $2202     
+234  216A :                                
+235  216A :         A9 02    lda #$02      
+236  216C :         8D 40 40 sta STATUSLEDS
+237  216F :                                
+238  216F :                                ; clear used ram
+239  216F :                                ; 0x200-0x7ff
+240  216F :         18       clc           
+241  2170 :         A9 02    lda #$02      
+242  2172 :         85 01    sta $1        
+243  2174 :         A9 00    lda #$0       
+244  2176 :         85 00    sta $0        
+245  2178 :                                
+246  2178 : CLEARNEXTREGION:                       
+247  2178 :         A9 00    lda #$00      ;Set up zero value
+248  217A :         A8       tay           ;Initialize index pointer
+249  217B : CLRM1:  91 00    sta ($0),Y    ;Clear memory location
+250  217D :         C8       iny           ;Advance index pointer
+251  217E :         CA       dex           ;Decrement counter
+252  217F :         D0 FA    bne CLRM1     ;Not zero, continue checking
+253  2181 :                                
+254  2181 :                                
+255  2181 :         A5 01    lda $1        
+256  2183 :         69 01    adc #$1       
+257  2185 :         85 01    sta $1        
+258  2187 :         C9 08    cmp #$8       
+259  2189 :         D0 ED    bne CLEARNEXTREGION
+260  218B :                                
+261  218B :         A9 00    lda #$0       
+262  218D :         85 01    sta $1        
+263  218F :         85 00    sta $0        
+264  2191 :                                
+265  2191 :         A9 00    lda #$00      ;Set up zero value
+266  2193 :         A8       tay           ;Initialize index pointer
+267  2194 : CLRZP:  91 00    sta ($0),Y    ;Clear memory location
+268  2196 :         C8       iny           ;Advance index pointer
+269  2197 :         CA       dex           ;Decrement counter
+270  2198 :         D0 FA    bne CLRZP     ;Not zero, continue checking
+271  219A :                                
+272  219A :                                ; setup A, X, Y
+273  219A :         A9 00    lda #$0       
+274  219C :         A2 00    ldx #$0       ; for NTSC tune....
+275  219E :         A0 00    ldy #$0       
+276  21A0 :                                
+277  21A0 :                                ; now branch to init
+278  21A0 :         4C 00 22 jmp INITJSRLOCATION
+279  2200 :                  org $2200     
+280  2200 : INITJSRLOCATION:                       
+281  2200 :         20 00 00 jsr $0000     
+282  2203 :                                
+283  2203 :                                
+284  2203 :                                ; setup interrupt-triggered call of play routine
+285  2203 :         A9 00    lda #$00      
+286  2205 :         8D 2E 40 sta IRQSHADOWREGL
+287  2208 :         8D 80 2E sta CURRENTLYINPLAYROUT
+288  220B :         A9 23    lda #$23      
+289  220D :         8D 2F 40 sta IRQSHADOWREGH
+290  2210 :                                ; modify call address
+291  2210 :         AD 0C 2E lda HDRPLAYADDRL
+292  2213 :         8D 21 23 sta $2321     
+293  2216 :         AD 0D 2E lda HDRPLAYADDRH
+294  2219 :         09 80    ora #$80      
+295  221B :         8D 22 23 sta $2322     
+296  221E :                                
+297  221E :         AD 6F 2E lda HDRNTSCSPEEDH
+298  2221 :         8D 32 40 sta TIMERHIGHPERIOD
+299  2224 :                                
+300  2224 :         AD 6E 2E lda HDRNTSCSPEEDL
+301  2227 :         8D 31 40 sta TIMERLOWPERIOD
+302  222A :                                
+303  222A :         A9 03    lda #$03      
+304  222C :         8D 30 40 sta TIMERMODE 
+305  222F :                                
+306  222F :         A9 01    lda #$01      
+307  2231 :         8D 40 40 sta SONGSEL   
+308  2234 :                                
+309  2234 :                                ; disable frame interrupt
+310  2234 :         A9 00    lda #$00      
+311  2236 :         8D 17 40 sta FRAMECTRCTRL
+312  2239 :                                
+313  2239 :                                ; enable interrupts and enter an endless loop
+314  2239 :         58       cli           
+315  223A : WAITLOOP:                       
+316  223A :         4C 3A 22 jmp WAITLOOP  
+317  223D :                                
+318  223D :                                ; irq handler ____ WARNING: ANY CHANGEs IN HERE NEEDS TO BE REFLECTED IN MODIFICATION OF PLAY ROUTINE START ADDRESS MODIFICATION ________
+319  2300 :                  org $2300     
+320  2300 :                                
+321  2300 :         78       sei           
+322  2301 :                                
+323  2301 :         48       pha           
+324  2302 :                                ; clear frame interrupt
+325  2302 :         AD 15 40 lda APUSTATUSREG
+326  2305 :                                
+327  2305 :                                ; clear irq from rate timer
+328  2305 :         A9 03    lda #$03      
+329  2307 :         8D 30 40 sta TIMERMODE 
+330  230A :                                
+331  230A :                                ; disable vector overlay (just write to the overlay RAM once...)
+332  230A :         A9 00    lda #$00      
+333  230C :         8D 21 40 sta $4021     
+334  230F :                                
+335  230F :                                ; update status leds
+336  230F :         A9 02    lda #$02      
+337  2311 :         8D 40 40 sta STATUSLEDS
+338  2314 :                                
+339  2314 :                                ; check if we managed to finish the play routine before the current interrupt came in
+340  2314 :         AD 80 2E lda CURRENTLYINPLAYROUT
+341  2317 :         C9 00    cmp #$0       
+342  2319 :                                ; no? dont call it again
+343  2319 :                                ;BNE ISRDONE
+344  2319 :         EA       nop           
+345  231A :         EA       nop           
+346  231B :                                
+347  231B :                                ; we are okay to run the play routine
+348  231B :         A9 01    lda #$01      
+349  231D :         8D 80 2E sta CURRENTLYINPLAYROUT
+350  2320 :                                
+351  2320 :                                ; actual play routine call (call address will be modified by setup code)
+352  2320 :         20 00 00 jsr $0000     
+353  2323 :                                
+354  2323 :                                ; remember that we returned from the last play routine call
+355  2323 :         A9 00    lda #$00      
+356  2325 :         8D 80 2E sta CURRENTLYINPLAYROUT
+357  2328 :                                
+358  2328 :         A9 00    lda #$00      
+359  232A :         8D 17 40 sta FRAMECTRCTRL
+360  232D : ISRDONE:                       
+361  232D :                                
+362  232D :                                ; update status leds
+363  232D :         A9 03    lda #$03      
+364  232F :         8D 40 40 sta STATUSLEDS
+365  2332 :                                
+366  2332 :         68       pla           
+367  2333 :                                
+368  2333 :         58       cli           
+369  2334 :         40       rti           
+370  2335 :                                
+371  2335 :                                
+372  2335 : ERR:                           
+373  2335 :                                
+374  2335 : ERRLOOP:                       
+375  2335 :         4C 35 23 jmp ERRLOOP   
+376  2338 :                                
+377  2E00 :                  org $2E00     
+378  2E00 :                  db  0,0,0,0,0 
+378  2E00 :         00 00 00 00 00
+379  2E05 : HDRVERNUM:                       
+380  2E05 :                  db  0         
+381  2E06 : HDRTOTALSONGNUM:                       
+382  2E06 :                  db  0         
+383  2E07 : HDRSTARTSONGNUM:                       
+384  2E07 :                  db  0         
+385  2E08 : HDRLOADADDRL:                       
+386  2E08 :                  db  0         
+387  2E09 : HDRLOADADDRH:                       
+388  2E09 :                  db  0         
+389  2E0A : HDRINITADDRL:                       
+390  2E0A :                  db  0         
+391  2E0B : HDRINITADDRH:                       
+392  2E0B :                  db  0         
+393  2E0C : HDRPLAYADDRL:                       
+394  2E0C :                  db  0         
+395  2E0D : HDRPLAYADDRH:                       
+396  2E0D :                  db  0         
+397  2E6E :                  org $2E6E     
+398  2E6E : HDRNTSCSPEEDL:                       
+399  2E6E :                  db  0         
+400  2E6F : HDRNTSCSPEEDH:                       
+401  2E6F :                  db  0         
+402  2E70 : HDRBANKS:                       
+403  2E70 :                  db  0,0,0,0,0,0,0,0
+403  2E70 :         00 00 00 00 00 00 00 00
+404  2E78 : HDRPALSPEED:                       
+405  2E78 :                  dw  0         
+405  2E78 :         00 00
+406  2E7A :                  db  0         
+407  2E7B :                  db  0         
+408  2E7C :                  dw  0, 0      
+408  2E7C :         00 00 00 00
+409  2E80 :                                
+410  2E80 : CURRENTLYINPLAYROUT:                       
+411  2E80 :                  db  0         
+412  2E81 :                                
+413  2E81 : SELECTEDSONG:                       
+414  2E81 :                  db  0         
+415  2E82 :                                
+416  2E82 : SELECTEDSONGOFFSL:                       
+417  2E82 :                  db  0         
+418  2E83 : SELECTEDSONGOFFSM:                       
+419  2E83 :                  db  0         
+420  2E84 : SELECTEDSONGOFFSH:                       
+421  2E84 :                  db  0         
+422  2E85 :                                
+423  2E85 :                                
+424  5FF0 :                  org $5FF0     
+425  5FF0 : BKSWOFFSL:                       
+426  5FF0 :                  db  0         
+427  5FF1 : BKSWOFFSM:                       
+428  5FF1 :                  db  0         
+429  5FF2 : BKSWOFFSH:                       
+430  5FF2 :                  db  0         
+431  5FF3 : APUMIXCTRL:                       
+432  5FF3 :                  db  0         
+433  5FF4 :                                
+434  5FF4 :                                
+435  5FF4 :                                
+436  4015 :                  org $4015     
+437  4015 : APUSTATUSREG:                       
+438  4015 :                  db  0         
+439  4016 :                                
+440  4017 :                  org $4017     
+441  4017 : FRAMECTRCTRL:                       
+442  4017 :                  db  0         
+443  4018 :                                
+444  4020 :                  org $4020     
+445  4020 :                  db  0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+445  4020 :         00 00 00 00 00 00 00 00 00 00
+446  402A : NMISHADOWREGL:                       
+447  402A :                  db  0         
+448  402B : NMISHADOWREGH:                       
+449  402B :                  db  0         
+450  402C : RESSHADOWREGL:                       
+451  402C :                  db  0         
+452  402D : RESSHADOWREGH:                       
+453  402D :                  db  0         
+454  402E : IRQSHADOWREGL:                       
+455  402E :                  db  0         
+456  402F : IRQSHADOWREGH:                       
+457  402F :                  db  0         
+458  4030 :                                
+459  4030 :                  org $4030     
+460  4030 : TIMERMODE:                       
+461  4030 :                  db  0         
+462  4031 : TIMERLOWPERIOD:                       
+463  4031 :                  db  0         
+464  4032 : TIMERHIGHPERIOD:                       
+465  4032 :                  db  0         
+466  4033 :                                
+467  4040 :                  org $4040     
+468  4040 : SONGSEL:                       
+469  4040 : STATUSLEDS:                       
+470  4040 :                  db  0         
+471  4041 :                                
+472  4050 :                  org $4050     
+473  4050 : BKSWOFFSL:                       
+474  4050 :                  db  0         
+475  4051 : BKSWOFFSM:                       
+476  4051 :                  db  0         
+477  4052 : BKSWOFFSH:                       
+478  4052 :                  db  0         
+479  4054 :                  org $4054     
+480  4054 : BKSWEN:                        
+481  4054 :                      0         
+482  4054 :                                
+483  5FF8 :                  org $5FF8     
+484  5FF8 : BKSWPAGENUMS:                       
+485  5FF8 :                  db  0, 0, 0, 0, 0, 0, 0, 0
+485  5FF8 :         00 00 00 00 00 00 00 00
+SYMBOL TABLE
+BEGIN      = $2000
+SONGNUMERR = $206A
+NSFVERERR  = $2072
+REGIONERR  = $207A
+LOCALERR   = $2082
+COPYHEADER = $2085
+NSFHEADERLOOP = $2097
+NSFBKSWCHECKLOOP = $20AA
+BANKWASNOTZERO = $20E3
+NSFBKSWCOPYLOOP = $20FA
+BKSWTABLEDONE = $2103
+CLEARAPULOOP = $214D
+CLEARNEXTREGION = $2178
+CLRM1      = $217B
+CLRZP      = $2194
+INITJSRLOCATION = $2200
+WAITLOOP   = $223A
+ISRDONE    = $232D
+ERR        = $2335
+ERRLOOP    = $2335
+HDRVERNUM  = $2E05
+HDRTOTALSONGNUM = $2E06
+HDRSTARTSONGNUM = $2E07
+HDRLOADADDRL = $2E08
+HDRLOADADDRH = $2E09
+HDRINITADDRL = $2E0A
+HDRINITADDRH = $2E0B
+HDRPLAYADDRL = $2E0C
+HDRPLAYADDRH = $2E0D
+HDRNTSCSPEEDL = $2E6E
+HDRNTSCSPEEDH = $2E6F
+HDRBANKS   = $2E70
+HDRPALSPEED = $2E78
+CURRENTLYINPLAYROUT = $2E80
+SELECTEDSONG = $2E81
+SELECTEDSONGOFFSL = $2E82
+SELECTEDSONGOFFSM = $2E83
+SELECTEDSONGOFFSH = $2E84
+BKSWOFFSL  = $4050
+BKSWOFFSM  = $4051
+BKSWOFFSH  = $4052
+APUMIXCTRL = $5FF3
+APUSTATUSREG = $4015
+FRAMECTRCTRL = $4017
+NMISHADOWREGL = $402A
+NMISHADOWREGH = $402B
+RESSHADOWREGL = $402C
+RESSHADOWREGH = $402D
+IRQSHADOWREGL = $402E
+IRQSHADOWREGH = $402F
+TIMERMODE  = $4030
+TIMERLOWPERIOD = $4031
+TIMERHIGHPERIOD = $4032
+SONGSEL    = $4040
+STATUSLEDS = $4040
+BKSWEN     = $4054
+BKSWPAGENUMS = $5FF8

@@ -1,0 +1,30 @@
+DESIGN dmctimer
+VIEW interface
+NO_GRAPHIC 0
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 173,0 14 0 
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 178,0 15 0 
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 183,0 16 0 
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 188,0 17 0 
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 198,0 18 0 
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 193,0 19 0 
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 1,0 22 0 
+DESIGN dmctimer
+VIEW interface
+GRAPHIC 1,0 23 0 

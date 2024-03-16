@@ -1,0 +1,30 @@
+DESIGN triangleseq
+VIEW symbol.sb
+NO_GRAPHIC 0
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 50,0 8 0 
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 159,0 14 0 
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 169,0 15 0 
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 174,0 16 0 
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 179,0 17 0 
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 184,0 18 0 
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 164,0 19 0 
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 1,0 22 0 
+DESIGN triangleseq
+VIEW symbol.sb
+GRAPHIC 1,0 23 0 

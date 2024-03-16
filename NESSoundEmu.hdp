@@ -1,0 +1,20 @@
+[QuartusQIS]
+audiotest_lib = $HDS_PROJECT_DIR/NESSoundEmu_lib/qis
+[QuestaLint]
+audiotest_lib = $HDS_PROJECT_DIR/NESSoundEmu_lib/questa_lint
+[QuestaSim]
+audiotest_lib = $HDS_PROJECT_DIR/NESSoundEmu_lib/questasim
+[hdl]
+audiotest_lib = $HDS_PROJECT_DIR/NESSoundEmu_lib/hdl
+[hds]
+audiotest_lib = $HDS_PROJECT_DIR/NESSoundEmu_lib/hds
+[hds_settings]
+default_library = audiotest_lib
+design_root = audiotest_lib.NESPlayertoplevel(struct)@n@e@s@playertoplevel/struct.bd
+version = 3
+[library_files_inclusion]
+audiotest_lib = specify
+[library_type]
+audiotest_lib = regular
+[shared]
+others = /ext/eda/vendor_libs/quartus21_1_1/shared.hdp

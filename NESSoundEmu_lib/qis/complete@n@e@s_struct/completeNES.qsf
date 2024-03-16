@@ -1,0 +1,112 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2022  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+# Date created = 16:17:56  January 29, 2024
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		completeNES_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "cyclone v"
+set_global_assignment -name DEVICE 5cgxfc5c6f27c7
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:17:56  JANUARY 29, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.1 Standard Edition"
+set_global_assignment -name FMAX_REQUIREMENT "50 MHz"
+set_global_assignment -name TOP_LEVEL_ENTITY completeNES
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/booleanvectors_pkg.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/booleanvectors_pkg_body.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/memarbitermx65interface_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/quartuscompatibleram_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/mx65withtick_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apumixer_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apumixer_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noiselfsr1_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/NoiseLFSR1_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisetimer_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisetimer_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisewriteport_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisewriteport_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulseenv_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulseenv_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/premixer_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/premixer_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulselentghunit_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulselentghunit_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/noisechannel_struct.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/psweep_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/psweep_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsewriteport2_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsedividersequence_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/pulsechannel_struct.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/statusandaddrdec_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/statusandaddrdec_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelengthunit_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelengthunit_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/timer1_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/timer1_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglewriteport_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglewriteport_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelinearctr_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglelinearctr_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/triangleseq_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/triangleseq_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/trianglechannel_struct.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/dmcchannnel_struct.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/framecounter_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/framecounter_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/apu_struct.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/clk_res_gen_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/clk_res_gen_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/twoportarbiter_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/twoportarbiter_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecoderead_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/taktteilerboolean_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/taktteilerboolean_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodewrite_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/addrdecodewrite_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bankswitcher_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/bankswitcher_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/initialisableram_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/initialisableRAM_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/redacted/eds/NESSoundEmu/NESSoundEmu_lib/hdl/completenes_struct.vhd

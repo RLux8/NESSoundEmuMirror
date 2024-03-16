@@ -1,0 +1,2 @@
+DEFAULT_FILE atom pulseTBctrl1_behav.vhd
+DEFAULT_ARCHITECTURE atom behav

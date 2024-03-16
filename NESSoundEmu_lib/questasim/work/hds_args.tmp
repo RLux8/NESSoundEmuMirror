@@ -1,0 +1,1 @@
+ -L audiotest_lib -L altera_mf -l ../transcript.txt -i -t ns -multisource_delay latest +typdelays -voptargs="+acc" audiotest_lib.entireNESTB(struct)

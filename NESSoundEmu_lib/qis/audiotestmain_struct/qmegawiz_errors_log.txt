@@ -1,0 +1,11 @@
+
+
+/u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new.vhd
+
+Dec 13 02PM:24:03>: Megafunction PLL Intel FPGA IP v21.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+/u/home/clab/redacted/eds/norbert/HDS/audiotest/audiotest_lib/hdl/pll5012new.vhd
+
+Dec 13 02PM:24:04>: Megafunction PLL Intel FPGA IP v21.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted

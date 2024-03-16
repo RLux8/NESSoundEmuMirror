@@ -1,0 +1,421 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -36.344
+TNS   : -771.704
+
+Type  : Slow 1100mV 85C Model Setup 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : -7.880
+TNS   : -7.880
+
+Type  : Slow 1100mV 85C Model Setup 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : -7.395
+TNS   : -7.395
+
+Type  : Slow 1100mV 85C Model Setup 'res_n'
+Slack : -5.081
+TNS   : -9.758
+
+Type  : Slow 1100mV 85C Model Setup 'taktteiler:rateclkdiv|tick'
+Slack : -4.631
+TNS   : -69.388
+
+Type  : Slow 1100mV 85C Model Setup 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.005
+TNS   : -1274.253
+
+Type  : Slow 1100mV 85C Model Hold 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.288
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.294
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'res_n'
+Slack : 0.854
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'taktteiler:rateclkdiv|tick'
+Slack : 1.101
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : 2.332
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : 2.376
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'taktteiler:rateclkdiv|tick'
+Slack : -6.861
+TNS   : -109.616
+
+Type  : Slow 1100mV 85C Model Recovery 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -6.602
+TNS   : -6036.776
+
+Type  : Slow 1100mV 85C Model Recovery 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -6.170
+TNS   : -649.694
+
+Type  : Slow 1100mV 85C Model Removal 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.875
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 1.209
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'taktteiler:rateclkdiv|tick'
+Slack : 4.255
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'taktteiler:rateclkdiv|tick'
+Slack : -0.538
+TNS   : -12.903
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'res_n'
+Slack : 0.113
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.367
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.380
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 0.833
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : 9.949
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 33.562
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 40.893
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -38.061
+TNS   : -808.243
+
+Type  : Slow 1100mV 0C Model Setup 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : -7.966
+TNS   : -7.966
+
+Type  : Slow 1100mV 0C Model Setup 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : -7.424
+TNS   : -7.424
+
+Type  : Slow 1100mV 0C Model Setup 'res_n'
+Slack : -5.005
+TNS   : -9.578
+
+Type  : Slow 1100mV 0C Model Setup 'taktteiler:rateclkdiv|tick'
+Slack : -4.645
+TNS   : -69.637
+
+Type  : Slow 1100mV 0C Model Setup 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.751
+TNS   : -1197.362
+
+Type  : Slow 1100mV 0C Model Hold 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.268
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.285
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'res_n'
+Slack : 0.764
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'taktteiler:rateclkdiv|tick'
+Slack : 1.148
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : 2.232
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : 2.352
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'taktteiler:rateclkdiv|tick'
+Slack : -6.861
+TNS   : -109.611
+
+Type  : Slow 1100mV 0C Model Recovery 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -6.461
+TNS   : -5883.333
+
+Type  : Slow 1100mV 0C Model Recovery 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -6.106
+TNS   : -643.137
+
+Type  : Slow 1100mV 0C Model Removal 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.789
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.978
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'taktteiler:rateclkdiv|tick'
+Slack : 4.418
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'taktteiler:rateclkdiv|tick'
+Slack : -0.538
+TNS   : -12.759
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'res_n'
+Slack : 0.115
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.350
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 0.833
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.980
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 33.520
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 40.813
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -16.359
+TNS   : -337.902
+
+Type  : Fast 1100mV 85C Model Setup 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : -2.910
+TNS   : -2.910
+
+Type  : Fast 1100mV 85C Model Setup 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : -2.712
+TNS   : -2.712
+
+Type  : Fast 1100mV 85C Model Setup 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.628
+TNS   : -756.115
+
+Type  : Fast 1100mV 85C Model Setup 'res_n'
+Slack : -2.025
+TNS   : -3.834
+
+Type  : Fast 1100mV 85C Model Setup 'taktteiler:rateclkdiv|tick'
+Slack : -1.991
+TNS   : -29.174
+
+Type  : Fast 1100mV 85C Model Hold 'res_n'
+Slack : -0.017
+TNS   : -0.017
+
+Type  : Fast 1100mV 85C Model Hold 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'taktteiler:rateclkdiv|tick'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.968
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.995
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'taktteiler:rateclkdiv|tick'
+Slack : -3.522
+TNS   : -56.292
+
+Type  : Fast 1100mV 85C Model Recovery 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.420
+TNS   : -360.613
+
+Type  : Fast 1100mV 85C Model Recovery 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.389
+TNS   : -3175.846
+
+Type  : Fast 1100mV 85C Model Removal 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.591
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.767
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'taktteiler:rateclkdiv|tick'
+Slack : 2.020
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'res_n'
+Slack : -0.138
+TNS   : -0.455
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'taktteiler:rateclkdiv|tick'
+Slack : 0.108
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.470
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 0.833
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : 9.643
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 33.881
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 41.192
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -15.520
+TNS   : -318.905
+
+Type  : Fast 1100mV 0C Model Setup 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : -2.664
+TNS   : -2.664
+
+Type  : Fast 1100mV 0C Model Setup 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : -2.469
+TNS   : -2.469
+
+Type  : Fast 1100mV 0C Model Setup 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.302
+TNS   : -693.736
+
+Type  : Fast 1100mV 0C Model Setup 'taktteiler:rateclkdiv|tick'
+Slack : -1.763
+TNS   : -25.815
+
+Type  : Fast 1100mV 0C Model Setup 'res_n'
+Slack : -1.675
+TNS   : -3.154
+
+Type  : Fast 1100mV 0C Model Hold 'res_n'
+Slack : -0.063
+TNS   : -0.063
+
+Type  : Fast 1100mV 0C Model Hold 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.140
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'taktteiler:rateclkdiv|tick'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.910
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.920
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'taktteiler:rateclkdiv|tick'
+Slack : -3.481
+TNS   : -55.636
+
+Type  : Fast 1100mV 0C Model Recovery 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.342
+TNS   : -352.299
+
+Type  : Fast 1100mV 0C Model Recovery 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.300
+TNS   : -3087.268
+
+Type  : Fast 1100mV 0C Model Removal 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.540
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.636
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'taktteiler:rateclkdiv|tick'
+Slack : 2.027
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'res_n'
+Slack : -0.108
+TNS   : -0.352
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'taktteiler:rateclkdiv|tick'
+Slack : 0.124
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'entireNES:neswrap|apu:apui|pulsechannel:p2|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.463
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'entireNES:neswrap|apu:apui|pulsechannel:p1|pulsewriteport2:U_1|sweepnegate'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 0.833
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.632
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 33.884
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'U_2|pll50m_to_12m_13_3m_14_3m_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 41.185
+TNS   : 0.000
+
+------------------------------------------------------------
