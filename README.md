@@ -8,7 +8,10 @@ All of the hardware description was done in VHDL using the HDL Designer tool.
 ## Sample recording from FPGA board
 
 
-https://github.com/RLux8/NESSoundEmuMirror/assets/72990534/34cfe8cc-1baf-49e1-b940-ae74aabecac3
+
+https://github.com/RLux8/NESSoundEmuMirror/assets/72990534/b5033c4b-ec3a-4bf5-98c4-e32e202bb145
+
+
 
 
 ## Getting started / Loading the demo configuration
